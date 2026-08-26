@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Contact Straden</title>
-<meta name="description" content="Talk to Straden about the operational work your service business is ready to stop chasing.">
+<meta name="description" content="Talk to Straden about the work getting stuck between people, tools, approvals, and follow-up in your service business.">
 <link rel="canonical" href="https://www.straden.ca/contact">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#1B3A5C">
@@ -12,12 +12,12 @@
 <meta property="og:site_name" content="Straden">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Contact Straden">
-<meta property="og:description" content="Talk to Straden about the operational work your service business is ready to stop chasing.">
+<meta property="og:description" content="Talk to Straden about work getting stuck between people, tools, approvals, and follow-up.">
 <meta property="og:url" content="https://www.straden.ca/contact">
 <meta property="og:image" content="https://www.straden.ca/assets/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Straden — intelligent operating systems for service businesses">
+<meta property="og:image:alt" content="Straden intelligent operating systems for service businesses">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact Straden">
 <meta name="twitter:description" content="Tell us where time or revenue is slipping through the gaps.">
@@ -47,18 +47,16 @@
 
 <header class="interior-hero">
   <div class="max-w">
-    <span class="eyebrow">Contact</span>
-    <h1>Already sold? Let's talk.</h1>
-    <p>Tell us a little about your business, where work is getting stuck, and what you want to make easier. We'll follow up personally.</p>
+    <h1>Ready to talk through the problem?</h1>
+    <p>Tell us where work is getting stuck and what you want to make easier. We will follow up personally.</p>
   </div>
 </header>
 
 <main class="contact-section" id="main-content" tabindex="-1">
   <div class="max-w contact-layout">
     <div class="contact-intro">
-      <span class="eyebrow">Start with the conversation</span>
-      <h2>No pitch deck required.</h2>
-      <p>You do not need to know which agent or automation you need. Describe what your team keeps chasing, checking, or moving by hand. That is enough to start.</p>
+      <h2>Bring the problem as it is.</h2>
+      <p>You do not need to choose an agent or design an automation first. Describe what your team keeps chasing, checking, or moving by hand.</p>
       <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ20nN7c6zwl5fSxLQvQccqnG1wAEYMGHbZ5A-SJDbIxnggAbB98NAZtv2Cl2af-pyjVsmds6G7X" class="btn btn-cta contact-booking-link">Book a 30-minute Intro Call &rarr;</a>
       <a href="/audit" class="contact-audit-link">Not ready to talk? Take the free 3-minute Mini Audit →</a>
     </div>
@@ -67,7 +65,7 @@
       <div class="audit-result-context" id="auditResultContext" hidden>
         <span>Your Mini Audit result</span>
         <strong id="auditResultTitle"></strong>
-        <p>We carried this result into the conversation so you do not have to repeat yourself.</p>
+        <p>Your result is included with this form, so you will not need to repeat the same information.</p>
       </div>
       <div class="form-field">
         <label for="contact-name">Name</label>
@@ -96,7 +94,7 @@
   <div class="max-w footer-top">
     <div class="footer-brand">
       <a class="logo" href="/" aria-label="Straden home"><span class="wordmark">STRADEN</span><span class="dot" aria-hidden="true"></span></a>
-      <p class="footer-tag">An operated system for service businesses that are tired of chasing their own work.</p>
+      <p class="footer-tag">An operated agent system for service businesses with work stuck between people and tools.</p>
       <a href="/audit" class="btn btn-cta footer-primary-action">Find Your First Agent →</a>
     </div>
     <div class="footer-col">
@@ -160,7 +158,7 @@ if (auditSource === 'mini-audit-v2') {
 document.getElementById('contactForm').addEventListener('submit', function (event) {
   event.preventDefault();
   const data = new FormData(event.currentTarget);
-  const subject = `Straden inquiry — ${data.get('company')}`;
+  const subject = `Straden inquiry: ${data.get('company')}`;
   const body = [
     `Name: ${data.get('name')}`,
     `Work email: ${data.get('email')}`,

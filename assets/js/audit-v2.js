@@ -18,10 +18,10 @@ const FREQUENCY_OPTIONS = [
 ];
 
 const BAND_COPY = {
-  Low: "This is a useful workflow to examine before the current drag becomes harder to unwind.",
-  Moderate: "This pattern is recurring often enough to confirm before it consumes more capacity.",
-  Strong: "This is worth prioritizing because the drag is already consuming meaningful capacity.",
-  Severe: "This appears to be an active operating constraint. Confirming the first move should be a priority."
+  Low: "The drag is still limited, but this workflow is worth checking before it becomes harder to manage.",
+  Moderate: "This delay is recurring often enough to cost real capacity.",
+  Strong: "This workflow is already consuming meaningful capacity and should be addressed.",
+  Severe: "This problem is actively limiting the operation and should be addressed first."
 };
 
 const CATEGORY_COPY = {
@@ -357,7 +357,7 @@ function renderResults() {
   const diagnosisCopy = result.categoryPoints === 0
     ? "Your answers do not point to one dominant friction pattern, so the first step is confirming where that time is actually going."
     : CATEGORY_COPY[result.categoryKey];
-  return `<div class="result-view"><h2 class="result-category">${firstName}, your team is losing ${result.hoursLostLabel} each week to ${diagnosisCause}.</h2><p class="result-lead">At the hourly value you provided, <strong>${result.timeCost.capacityDisplay}</strong> is tied up in coordination instead of delivery. ${diagnosisCopy}</p><div class="recommendation-block">${primaryAgent}${supportingNote}</div><div class="divider-line"></div><section class="call-offer"><h3 class="confirmation-heading">Confirm the right first move</h3><p>On an Intro Call, we will pressure-test this result, locate the real breakdown, and determine whether there is a clear first agent worth building.</p><ul class="call-outcomes"><li>Confirm the trigger, owner, and approval point.</li><li>Identify the first handoff worth fixing.</li><li>Decide whether Straden is the right fit for it.</li></ul><p class="routing-copy">${urgencyCopy}</p><p class="preparation-note">You do not need a process map or technical requirements. Bring the problem; we will structure the conversation.</p></section><div class="cta-block"><a class="btn btn-cta result-cta" href="${AUDIT_V2.introCallUrl}">Confirm My Best Starting Point</a><p class="cta-note">Choose a live 30-minute Intro Call time that works for you.</p><button type="button" class="results-secondary-link" onclick="restartAudit()">Retake the Mini Audit</button></div></div>`;
+  return `<div class="result-view"><h2 class="result-category">${firstName}, your team is losing ${result.hoursLostLabel} each week to ${diagnosisCause}.</h2><p class="result-lead">At the hourly value you provided, <strong>${result.timeCost.capacityDisplay}</strong> is tied up in coordination instead of delivery. ${diagnosisCopy}</p><div class="recommendation-block">${primaryAgent}${supportingNote}</div><div class="divider-line"></div><section class="call-offer"><h3 class="confirmation-heading">Confirm where to start</h3><p>On an Intro Call, we will review this result, locate the breakdown, and decide whether there is a clear first agent worth building.</p><ul class="call-outcomes"><li>Confirm the trigger, owner, and approval point.</li><li>Identify the first handoff worth fixing.</li><li>Decide whether Straden is the right fit.</li></ul><p class="routing-copy">${urgencyCopy}</p><p class="preparation-note">No process map or technical brief is required. We will work from the problem you describe.</p></section><div class="cta-block"><a class="btn btn-cta result-cta" href="${AUDIT_V2.introCallUrl}">Book My Intro Call</a><p class="cta-note">Choose a 30-minute Intro Call time that works for you.</p><button type="button" class="results-secondary-link" onclick="restartAudit()">Retake the Mini Audit</button></div></div>`;
 }
 
 function restartAudit() {

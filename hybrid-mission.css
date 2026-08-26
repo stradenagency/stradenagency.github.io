@@ -36,7 +36,7 @@ body {
 }
 
 .hero::after {
-  content: "01";
+  content: "S";
   position: absolute;
   right: 4%;
   bottom: -30px;
@@ -75,18 +75,17 @@ article > .max-w {
 .statement + h2 { margin-top: 64px; }
 
 .triad {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
   margin-top: 28px;
+  border-top: 2px solid var(--navy);
 }
 
 .triad-item {
   display: block;
-  padding: 26px;
-  border: 1px solid var(--card-line) !important;
-  border-radius: 13px;
-  background: var(--paper);
+  padding: 26px 0;
+  border: 0 !important;
+  border-bottom: 1px solid var(--card-line) !important;
+  border-radius: 0;
+  background: transparent;
 }
 
 .triad-num { display: block; margin-bottom: 26px; }
@@ -110,5 +109,4 @@ article > .max-w {
   article > .max-w { margin: 0 16px; padding: 38px 24px; }
   .statement { margin-left: -24px; margin-right: -24px; padding: 38px 24px; }
   article h2 { margin-top: 48px; }
-  .triad { grid-template-columns: 1fr; }
 }
