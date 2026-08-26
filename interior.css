@@ -115,7 +115,8 @@ a { color: inherit; }
 .contact-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: start; }
 .contact-intro h2 { font-size: clamp(38px, 5vw, 64px); }
 .contact-intro p { color: var(--stone); font-size: 17px; line-height: 1.75; margin-top: 22px; }
-.contact-audit-link { display: inline-block; margin-top: 28px; color: var(--navy); font-weight: 700; text-underline-offset: 4px; }
+.contact-booking-link { margin-top: 28px; }
+.contact-audit-link { display: block; width: fit-content; margin-top: 20px; color: var(--navy); font-weight: 700; text-underline-offset: 4px; }
 .contact-form { display: flex; flex-direction: column; gap: 20px; padding: 34px; background: #fff; border: 1px solid rgba(27,58,92,.14); border-radius: 16px; box-shadow: var(--shadow-md); }
 .audit-result-context { padding: 18px; border: 1px solid rgba(224,122,69,.45); border-radius: 8px; background: var(--canvas); }
 .audit-result-context span, .audit-result-context strong { display: block; }
