@@ -119,13 +119,7 @@ a{color:inherit}
 .build-list{margin-top:20px;display:flex;flex-direction:column;gap:14px}
 .build-list .item b{display:block;font-family:var(--font-head);font-size:15px;color:var(--navy);margin-bottom:3px}
 .build-list .item span{font-size:14px;color:var(--stone);line-height:1.55}
-.build-evidence-heading{margin-top:30px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--font-head);font-size:14px;font-weight:700;color:var(--navy)}
-.build-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:14px}
-.build-evidence{margin:0;background:#fff;border:1px solid var(--line);padding:10px}
-.build-evidence img{display:block;width:100%;height:auto;aspect-ratio:8/5;object-fit:cover}
-.build-evidence figcaption{padding:10px 4px 2px;font-size:12.5px;color:var(--stone);line-height:1.55}
-@media (max-width:640px){.build{grid-template-columns:1fr}.build-num{font-size:44px}}
-@media (max-width:760px){.build-evidence-grid{grid-template-columns:1fr}}
+  @media (max-width:640px){.build{grid-template-columns:1fr}.build-num{font-size:44px}}
 
 /* GOVERNANCE — stacked statements */
 .gov-list{margin-top:20px}
@@ -316,17 +310,6 @@ a{color:inherit}
         <div class="build-list">
           <div class="item"><b>Projects Agent</b><span>Structures every new project, sets up the folder system, files documents automatically, and tracks milestones as work moves.</span></div>
           <div class="item"><b>Finance Agent</b><span>Triggers invoicing the moment a milestone is done, then follows up automatically until it's paid.</span></div>
-        </div>
-        <div class="build-evidence-heading">Client-safe interface evidence from the supervised pilot</div>
-        <div class="build-evidence-grid">
-          <figure class="build-evidence">
-            <img src="assets/img/evidence/reclaim-project-ops-pilot.png" width="1280" height="800" loading="lazy" decoding="async" alt="Reclaim Project Ops assistant confirming that it found and verified a pilot project folder without changing files">
-            <figcaption>Project Operations verifies the requested folder and reports the action boundary: no files were changed.</figcaption>
-          </figure>
-          <figure class="build-evidence">
-            <img src="assets/img/evidence/reclaim-finance-pilot.png" width="1280" height="800" loading="lazy" decoding="async" alt="Reclaim Finance assistant reporting that the invoice queue is ready for review without creating or changing invoices or payments">
-            <figcaption>Finance reports the review state without creating or changing an invoice or payment.</figcaption>
-          </figure>
         </div>
       </div>
     </div>
