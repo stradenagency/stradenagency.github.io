@@ -67,9 +67,44 @@ textarea {
   touch-action: manipulation;
 }
 
+/* One numeral system for every ordered story on the public site. */
+.map-idx,
+.build-num,
+.gov-item .n,
+.proc-step .n,
+.triad-num {
+  color: var(--ember-text, #A84A20);
+  font-family: var(--font-head);
+  font-size: clamp(28px, 3vw, 36px);
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1;
+  align-self: start;
+  white-space: nowrap;
+}
+
+.results-secondary-link,
+.contact-audit-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
 @media (pointer: coarse) {
   summary {
     min-height: 44px;
+  }
+}
+
+@media (hover: none) {
+  .btn:hover,
+  .p-box:hover,
+  .fit-yes:hover,
+  .fit-no:hover,
+  .out-box:hover,
+  .proc-step:hover {
+    transform: none;
   }
 }
 
@@ -139,6 +174,51 @@ textarea {
     min-height: 48px;
     font-size: 16px;
   }
+
+  .map-row,
+  .build,
+  .gov-item,
+  .proc-step,
+  .triad-item {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    align-items: start;
+    column-gap: 14px;
+    padding: 20px !important;
+  }
+
+  .map-desc,
+  .proc-step b,
+  .proc-step p {
+    grid-column: 2;
+  }
+
+  .map-idx,
+  .build-num,
+  .gov-item .n,
+  .proc-step .n,
+  .triad-num {
+    width: 52px;
+    margin: 0;
+    font-size: 28px;
+  }
+
+  .proc-step .n {
+    grid-row: 1 / span 2;
+  }
+
+  .proc-step b {
+    margin-top: 0;
+  }
+
+  .map-name {
+    min-width: 0;
+    font-size: clamp(20px, 6.4vw, 24px);
+  }
+
+  .build + .build {
+    padding-top: 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -187,6 +267,20 @@ textarea {
     padding: 20px;
   }
 
+  article > .max-w {
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .statement {
+    margin-right: -20px;
+    margin-left: -20px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
   .audit-shell #app .btn,
   .contact-form .btn {
     width: 100%;
@@ -214,5 +308,25 @@ textarea {
   .audit-shell #app.card {
     padding-left: 18px;
     padding-right: 18px;
+  }
+
+  .map-row,
+  .build,
+  .gov-item,
+  .proc-step,
+  .triad-item {
+    grid-template-columns: 48px minmax(0, 1fr);
+    column-gap: 12px;
+    padding-right: 18px !important;
+    padding-left: 18px !important;
+  }
+
+  .map-idx,
+  .build-num,
+  .gov-item .n,
+  .proc-step .n,
+  .triad-num {
+    width: 48px;
+    font-size: 26px;
   }
 }
