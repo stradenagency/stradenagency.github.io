@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Straden — AI-Powered Operating Systems for Service Businesses</title>
 <meta name="description" content="Straden builds and operates intelligent AI agents that coordinate workflows across your people and tools, helping service businesses recover time, prevent revenue leakage, and complete more valuable work.">
-<link rel="canonical" href="https://straden.ca/">
+<link rel="canonical" href="https://www.straden.ca/">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#1B3A5C">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
@@ -13,15 +13,15 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Straden — AI-Powered Operating Systems for Service Businesses">
 <meta property="og:description" content="Intelligent agents that coordinate workflows across your people and tools—helping recover time, protect revenue, and complete more valuable work.">
-<meta property="og:url" content="https://straden.ca/">
-<meta property="og:image" content="https://straden.ca/assets/img/og.jpg">
+<meta property="og:url" content="https://www.straden.ca/">
+<meta property="og:image" content="https://www.straden.ca/assets/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Straden — intelligent operating systems for service businesses">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Straden — AI-Powered Operating Systems for Service Businesses">
 <meta name="twitter:description" content="Recover time. Protect revenue. Complete more valuable work.">
-<meta name="twitter:image" content="https://straden.ca/assets/img/og.jpg">
+<meta name="twitter:image" content="https://www.straden.ca/assets/img/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -201,17 +201,19 @@ a{color:inherit}
 <link rel="stylesheet" href="hybrid.css">
 <link rel="stylesheet" href="assets/css/nav.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/site-shell.css">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <nav class="site-nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="logo" href="index.html">STRADEN<span class="dot"></span></a>
+    <a class="logo" href="/" aria-label="Straden home"><span class="wordmark">STRADEN</span><span class="dot" aria-hidden="true"></span></a>
     <button class="nav-toggle" type="button" aria-label="Open primary menu" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>Menu</button>
     <div class="nav-links" id="primary-nav">
-      <a href="mission.html" class="nav-link">Mission</a>
-      <a href="audit.html" class="btn btn-cta" style="padding:11px 22px;font-size:13.5px">Free Mini Audit →</a>
+      <a href="/mission" class="nav-link">Mission</a>
+      <a href="/contact" class="nav-link">Contact</a>
+      <a href="/audit" class="btn btn-cta nav-primary-action">Free Mini Audit →</a>
     </div>
   </div>
 </nav>
@@ -225,7 +227,7 @@ a{color:inherit}
     <h1>Your business is busy. Too much time and revenue still slips through the gaps.</h1>
     <p class="hero-lead">Straden builds and operates intelligent AI agents that coordinate workflows across the people and tools your business already uses. Each agent is given a job, the skills and memory to do it, and clear approval boundaries — then gets sharper as it learns from approved context, feedback, decisions, and outcomes.</p>
     <div class="hero-ctas">
-      <a href="audit.html" class="btn btn-cta">Find What's Costing You Time or Revenue →</a>
+      <a href="/audit" class="btn btn-cta">Find What's Costing You Time or Revenue →</a>
       <a href="#real-builds" class="btn btn-secondary">See a Real Build</a>
     </div>
     <p class="hero-line">Increase the productive and revenue-generating work your team can complete — without adding more chasing and administrative overhead.</p>
@@ -388,8 +390,8 @@ a{color:inherit}
     <h2>Find where your operating system should begin.</h2>
     <p>The free 3-minute Mini Audit identifies where work may be costing the most time or revenue — and which function may be the strongest place to start.</p>
     <div class="final-ctas">
-      <a href="audit.html" class="btn btn-cta">Find the Bottleneck →</a>
-      <a href="contact.html" class="btn btn-secondary">Already sold? Talk to us</a>
+      <a href="/audit" class="btn btn-cta">Find the Bottleneck →</a>
+      <a href="/contact" class="btn btn-secondary">Already sold? Talk to us</a>
     </div>
   </div>
 </section>
@@ -434,7 +436,7 @@ a{color:inherit}
       </details>
       <details class="faq-item">
         <summary><span>Who owns our data and business information?</span><span class="ind" aria-hidden="true">+</span></summary>
-        <p>You retain ownership of your business data, records, documents, and intellectual property. Straden retains its reusable software frameworks, general methods, agent skills, templates, and other underlying components. Permitted cross-business analysis uses anonymized information designed not to identify the originating client, and clients may opt out. More detail is available in our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Use</a>.</p>
+        <p>You retain ownership of your business data, records, documents, and intellectual property. Straden retains its reusable software frameworks, general methods, agent skills, templates, and other underlying components. Permitted cross-business analysis uses anonymized information designed not to identify the originating client, and clients may opt out. More detail is available in our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Use</a>.</p>
       </details>
     </div>
   </div>
@@ -443,22 +445,25 @@ a{color:inherit}
 </main>
 <footer class="site-footer">
   <div class="max-w footer-top">
-    <div>
-      <a class="logo" href="index.html" style="color:#fff">STRADEN<span class="dot"></span></a>
+    <div class="footer-brand">
+      <a class="logo" href="/" aria-label="Straden home"><span class="wordmark">STRADEN</span><span class="dot" aria-hidden="true"></span></a>
       <p class="footer-tag">An operated system for service businesses that are tired of chasing their own work.</p>
-      <a href="audit.html" class="btn btn-cta" style="font-size:13.5px;padding:11px 22px">Free Mini Audit →</a>
+      <a href="/audit" class="btn btn-cta footer-primary-action">Free Mini Audit →</a>
     </div>
     <div class="footer-col">
-      <h5>Straden</h5>
-      <ul class="footer-links"><li><a href="mission.html">Mission</a></li></ul>
-    </div>
-    <div class="footer-col">
-      <h5>Get Started</h5>
+      <h5>Explore</h5>
       <ul class="footer-links">
-        <li><a href="audit.html">Free Mini Audit</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="/mission">Mission</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Get started</h5>
+      <ul class="footer-links">
+        <li><a href="/audit">Free Mini Audit</a></li>
+        <li><a href="https://calendar.app.google/kBcDhYi7tCNre9oV9">Book an Intro Call</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Use</a></li>
       </ul>
     </div>
   </div>

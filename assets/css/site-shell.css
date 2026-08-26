@@ -1,0 +1,256 @@
+/* Shared production shell: wordmark, navigation, controls, and footer. */
+:root {
+  --site-max: 1200px;
+  --site-gutter: 32px;
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 3px solid var(--ember, #e07a45);
+  outline-offset: 3px;
+}
+
+.site-nav {
+  border-bottom: 1px solid rgba(27, 58, 92, .18);
+}
+
+.nav-inner,
+.site-footer > .footer-top,
+.footer-bottom {
+  width: 100%;
+  max-width: var(--site-max);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--site-gutter);
+  padding-left: var(--site-gutter);
+}
+
+.nav-inner {
+  min-height: 70px;
+  gap: 24px;
+}
+
+.logo {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  color: var(--navy);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.logo .wordmark {
+  display: block;
+}
+
+.logo .dot {
+  position: static;
+  display: block;
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  border-radius: 50%;
+  background: var(--ember);
+  transform: none;
+}
+
+.nav-links {
+  gap: 26px;
+}
+
+.nav-link {
+  position: relative;
+  padding: 12px 0;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: 7px;
+  left: 0;
+  height: 2px;
+  background: var(--ember);
+  content: "";
+  opacity: 0;
+  transform: scaleX(.4);
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.btn.nav-primary-action,
+.btn.footer-primary-action {
+  padding: 11px 22px;
+  font-size: 13.5px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(27, 58, 92, .14);
+}
+
+.btn-cta,
+.btn-primary {
+  border-color: var(--ember);
+  background: var(--ember);
+  color: #141414;
+}
+
+.btn-secondary {
+  border-color: var(--navy);
+  background: transparent;
+  color: var(--navy);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 14px rgba(27, 58, 92, .1);
+}
+
+.btn[aria-disabled="true"],
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+  transform: none;
+  box-shadow: none;
+}
+
+.site-footer {
+  margin-top: 0;
+  padding-top: 64px;
+  background: var(--navy);
+  color: #fff;
+}
+
+.site-footer > .footer-top {
+  display: grid;
+  grid-template-columns: 1.45fr .8fr 1fr;
+  gap: clamp(36px, 6vw, 76px);
+  padding-bottom: 44px;
+  border-bottom: 1px solid rgba(255, 255, 255, .16);
+}
+
+.site-footer .logo {
+  color: #fff;
+}
+
+.footer-brand .footer-tag {
+  max-width: 300px;
+  margin: 8px 0 22px;
+}
+
+.footer-col h5 {
+  margin-bottom: 12px;
+}
+
+.footer-links {
+  gap: 0;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 7px 0;
+  text-underline-offset: 4px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  padding-top: 22px;
+  padding-bottom: 28px;
+  color: rgba(255, 255, 255, .72);
+}
+
+@media (max-width: 900px) {
+  .site-footer > .footer-top {
+    grid-template-columns: 1.25fr .75fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --site-gutter: max(20px, env(safe-area-inset-left));
+  }
+
+  .nav-inner {
+    min-height: 64px;
+  }
+
+  .nav-links {
+    left: max(20px, env(safe-area-inset-left));
+    right: max(20px, env(safe-area-inset-right));
+  }
+
+  .nav-links .nav-link {
+    padding: 12px 14px;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .site-footer {
+    padding-top: 52px;
+  }
+
+  .site-footer > .footer-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-brand .footer-tag {
+    margin-top: 4px;
+  }
+
+  .footer-bottom {
+    padding-bottom: max(28px, env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 350px) {
+  :root {
+    --site-gutter: max(16px, env(safe-area-inset-left));
+  }
+
+  .logo {
+    gap: 8px;
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link::after {
+    transition: none;
+  }
+}
