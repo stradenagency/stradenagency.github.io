@@ -1,0 +1,218 @@
+/* Shared phone, touch, and accessibility refinements. */
+:root {
+  --stone: #646B75;
+  --color-stone: #646B75;
+}
+
+html {
+  overflow-wrap: break-word;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: #1B3A5C;
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+.legal-content a,
+.contact-form a,
+.footer-tag a {
+  overflow-wrap: anywhere;
+}
+
+.footer-links {
+  gap: 0 !important;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 7px 0;
+}
+
+.footer-bottom {
+  color: rgba(255, 255, 255, .72) !important;
+}
+
+summary,
+button,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+@media (pointer: coarse) {
+  summary {
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .max-w,
+  .nav-inner,
+  .footer-bottom {
+    padding-left: max(20px, env(safe-area-inset-left)) !important;
+    padding-right: max(20px, env(safe-area-inset-right)) !important;
+  }
+
+  .site-footer > .footer-top {
+    padding-left: max(20px, env(safe-area-inset-left)) !important;
+    padding-right: max(20px, env(safe-area-inset-right)) !important;
+  }
+
+  .footer-top {
+    gap: 28px !important;
+  }
+
+  .footer-col h5 {
+    margin-bottom: 8px !important;
+  }
+
+  .footer-bottom {
+    padding-bottom: max(28px, env(safe-area-inset-bottom)) !important;
+  }
+
+  .hero {
+    padding-top: 72px !important;
+    padding-bottom: 56px !important;
+  }
+
+  .memory {
+    padding-top: 76px !important;
+    padding-bottom: 76px !important;
+  }
+
+  .legal-hero {
+    min-height: 300px;
+    padding-top: 76px;
+    padding-bottom: 58px;
+  }
+
+  .legal-content {
+    overflow-wrap: anywhere;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    min-height: 48px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: clamp(36px, 10.25vw, 42px) !important;
+    line-height: 1.05;
+  }
+
+  .hero-lead {
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+  }
+
+  .hero-ctas {
+    align-items: stretch;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+  }
+
+  .section {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+
+  .legal-layout {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .legal-content {
+    padding: 34px 20px 42px;
+  }
+
+  .legal-notice {
+    padding: 20px;
+  }
+
+  .contact-form,
+  .audit-shell #app.card {
+    padding: 20px;
+  }
+
+  .audit-shell #app .btn,
+  .contact-form .btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 350px) {
+  .max-w,
+  .nav-inner,
+  .footer-bottom,
+  .site-footer > .footer-top {
+    padding-left: max(16px, env(safe-area-inset-left)) !important;
+    padding-right: max(16px, env(safe-area-inset-right)) !important;
+  }
+
+  .hero h1 {
+    font-size: 34px !important;
+  }
+
+  .legal-content,
+  .contact-form,
+  .audit-shell #app.card {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}

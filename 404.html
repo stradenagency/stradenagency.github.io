@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Page Not Found | Straden</title>
+<meta name="description" content="The page you requested could not be found.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#1B3A5C">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="interior.css">
+<link rel="stylesheet" href="assets/css/nav.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<script src="assets/js/nav.js" defer></script>
+<style>
+.not-found {
+  min-height: 68vh;
+  display: grid;
+  place-items: center;
+  padding: 96px 0;
+}
+.not-found-inner { max-width: 760px; }
+.not-found-code {
+  margin-bottom: 20px;
+  color: var(--ember-text);
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.not-found h1 {
+  max-width: 680px;
+  font-size: clamp(42px, 7vw, 76px);
+}
+.not-found p {
+  max-width: 620px;
+  margin-top: 24px;
+  color: var(--stone);
+  font-size: 18px;
+  line-height: 1.7;
+}
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+@media (max-width: 480px) {
+  .not-found { padding: 72px 0; }
+  .not-found-actions .btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">STRADEN<span class="dot"></span></a>
+    <button class="nav-toggle" type="button" aria-label="Open primary menu" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>Menu</button>
+    <div class="nav-links" id="primary-nav">
+      <a href="mission.html" class="nav-link">Mission</a>
+      <a href="audit.html" class="nav-link">Free Mini Audit</a>
+      <a href="contact.html" class="btn btn-cta">Talk to us</a>
+    </div>
+  </div>
+</nav>
+
+<main class="not-found" id="main-content" tabindex="-1">
+  <div class="max-w">
+    <div class="not-found-inner">
+      <div class="not-found-code">Error 404</div>
+      <h1>This page took a wrong turn.</h1>
+      <p>The page may have moved, or the address may be incomplete. Head back to the website or use the free Mini Audit to find where work is slipping through the gaps.</p>
+      <div class="not-found-actions">
+        <a href="index.html" class="btn btn-secondary">Back to the website</a>
+        <a href="audit.html" class="btn btn-cta">Take the Free Mini Audit →</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="max-w footer-top">
+    <div>
+      <a class="logo" href="index.html" style="color:#fff">STRADEN<span class="dot"></span></a>
+      <p class="footer-tag">An operated system for service businesses that are tired of chasing their own work.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Straden</h5>
+      <ul class="footer-links">
+        <li><a href="mission.html">Mission</a></li>
+        <li><a href="audit.html">Free Mini Audit</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Straden.</span><span>Ontario, Canada.</span></div>
+</footer>
+</body>
+</html>

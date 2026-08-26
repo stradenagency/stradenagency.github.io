@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Contact Straden</title>
+<meta name="description" content="Talk to Straden about the operational work your service business is ready to stop chasing.">
+<link rel="canonical" href="https://straden.ca/contact">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#1B3A5C">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<meta property="og:site_name" content="Straden">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact Straden">
+<meta property="og:description" content="Talk to Straden about the operational work your service business is ready to stop chasing.">
+<meta property="og:url" content="https://straden.ca/contact">
+<meta property="og:image" content="https://straden.ca/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Straden — intelligent operating systems for service businesses">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact Straden">
+<meta name="twitter:description" content="Tell us where time or revenue is slipping through the gaps.">
+<meta name="twitter:image" content="https://straden.ca/assets/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="interior.css">
+<link rel="stylesheet" href="assets/css/nav.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<script src="assets/js/nav.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">STRADEN<span class="dot"></span></a>
+    <button class="nav-toggle" type="button" aria-label="Open primary menu" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>Menu</button>
+    <div class="nav-links" id="primary-nav">
+      <a href="mission.html" class="nav-link">Mission</a>
+      <a href="audit.html" class="btn btn-cta">Free Mini Audit</a>
+    </div>
+  </div>
+</nav>
+
+<header class="interior-hero">
+  <div class="max-w">
+    <span class="eyebrow">Contact</span>
+    <h1>Already sold? Let's talk.</h1>
+    <p>Tell us a little about your business, where work is getting stuck, and what you want to make easier. We'll follow up personally.</p>
+  </div>
+</header>
+
+<main class="contact-section" id="main-content" tabindex="-1">
+  <div class="max-w contact-layout">
+    <div class="contact-intro">
+      <span class="eyebrow">Start with the conversation</span>
+      <h2>No pitch deck required.</h2>
+      <p>You do not need to know which agent or automation you need. Describe what your team keeps chasing, checking, or moving by hand. That is enough to start.</p>
+      <a href="audit.html" class="contact-audit-link">Not ready to talk? Take the free 3-minute Mini Audit →</a>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <div class="audit-result-context" id="auditResultContext" hidden>
+        <span>Your Mini Audit result</span>
+        <strong id="auditResultTitle"></strong>
+        <p>We carried this result into the conversation so you do not have to repeat yourself.</p>
+      </div>
+      <div class="form-field">
+        <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" name="name" autocomplete="name" required>
+      </div>
+      <div class="form-field">
+        <label for="contact-email">Work email</label>
+        <input type="email" id="contact-email" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-field">
+        <label for="contact-company">Company</label>
+        <input type="text" id="contact-company" name="company" autocomplete="organization" required>
+      </div>
+      <div class="form-field">
+        <label for="contact-message">What is creating the most drag?</label>
+        <textarea id="contact-message" name="message" rows="6" placeholder="Tell us what your team is chasing, repeating, or losing track of." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-cta">Email Straden →</button>
+      <p class="form-note">This opens a prepared email. If your email application does not open, contact <a href="mailto:straden.agency@gmail.com">straden.agency@gmail.com</a> directly. A calendar-booking option will be added when it is ready.</p>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="max-w footer-top">
+    <div><a class="logo" href="index.html" style="color:#fff">STRADEN<span class="dot"></span></a><p class="footer-tag">An operated system for service businesses that are tired of chasing their own work.</p></div>
+    <div class="footer-col"><h5>Straden</h5><ul class="footer-links"><li><a href="mission.html">Mission</a></li><li><a href="audit.html">Free Mini Audit</a></li></ul></div>
+    <div class="footer-col"><h5>Legal</h5><ul class="footer-links"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Straden.</span><span>Ontario, Canada.</span></div>
+</footer>
+
+<script>
+const auditSource = new URLSearchParams(window.location.search).get('source');
+if (auditSource === 'mini-audit-v2') {
+  try {
+    const auditResult = JSON.parse(sessionStorage.getItem('stradenMiniAuditV2') || 'null');
+    if (auditResult && auditResult.version === 2) {
+      const resultTitle = auditResult.categoryPoints === 0
+        ? `No dominant friction pattern in ${auditResult.messiestAreaLabel || auditResult.messiestArea}`
+        : `${auditResult.category} in ${auditResult.messiestAreaLabel || auditResult.messiestArea}`;
+      document.getElementById('auditResultTitle').textContent = resultTitle;
+      document.getElementById('auditResultContext').hidden = false;
+      if (auditResult.firstName) document.getElementById('contact-name').value = auditResult.firstName;
+      const message = document.getElementById('contact-message');
+      const contextLines = [
+        `Mini Audit result: ${resultTitle}`,
+        `Business: ${auditResult.businessType}`,
+        `Team size: ${auditResult.teamSize}`,
+        `Messiest area: ${auditResult.messiestAreaLabel || auditResult.messiestArea}`
+      ];
+      if (Array.isArray(auditResult.workflows) && auditResult.workflows.length) {
+        contextLines.push(`Workflows: ${auditResult.workflows.join('; ')}`);
+      }
+      if (auditResult.timeCost && auditResult.timeCost.display) {
+        contextLines.push(`Estimated time cost: ${auditResult.timeCost.display}`);
+      }
+      if (auditResult.recommendations && auditResult.recommendations.primary) {
+        contextLines.push(`Recommended starting agent: ${auditResult.recommendations.primary.label}`);
+      }
+      message.value = `${contextLines.join('\n')}\n\nWhat I would like to discuss:\n`;
+    }
+  } catch (error) {
+    console.warn('Mini Audit result could not be loaded.', error);
+  }
+}
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  const subject = `Straden inquiry — ${data.get('company')}`;
+  const body = [
+    `Name: ${data.get('name')}`,
+    `Work email: ${data.get('email')}`,
+    `Company: ${data.get('company')}`,
+    '',
+    'What is creating the most drag?',
+    data.get('message')
+  ].join('\n');
+  document.getElementById('formStatus').textContent = 'Opening your email application. If nothing happens, use the direct email link above.';
+  window.location.href = `mailto:straden.agency@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+</script>
+</body>
+</html>

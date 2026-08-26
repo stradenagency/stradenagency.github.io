@@ -1,0 +1,303 @@
+/* =============================================================
+   STRADEN — Mini Audit page styles
+   Extracted from the original self-contained quiz prototype
+   (assets/_source-mini-audit.html). Tokens (colors, type, spacing)
+   come from tokens.css; shared chrome (nav, footer, base .btn/.card/
+   .eyebrow/.grid-2 rules) comes from style.css — both loaded before
+   this file. Only quiz-specific styles live here: the progress bar,
+   question cards, answer options, and the animated results screen.
+============================================================= */
+
+/* -----------------------------------------------------------
+   PAGE SHELL
+----------------------------------------------------------- */
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+.progress-track {
+  height: 4px;
+  background: var(--color-light);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 2px;
+  transition: width 0.35s ease;
+  width: 0%;
+}
+
+/* -----------------------------------------------------------
+   STEP / QUESTION TYPOGRAPHY
+   (color + font-family already come from the global h1 rule —
+   only the quiz-specific size/weight/spacing overrides live here)
+----------------------------------------------------------- */
+.step-title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.step-title:focus {
+  outline: none;
+}
+
+.step-sub {
+  color: var(--color-stone);
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+/* -----------------------------------------------------------
+   ANSWER OPTIONS
+----------------------------------------------------------- */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.option {
+  border: 1.5px solid var(--color-light);
+  background: var(--color-surface);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-ink);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.option:hover {
+  border-color: var(--color-primary);
+}
+
+.option.selected {
+  border-color: var(--color-primary);
+  background: var(--color-mist);
+  font-weight: 500;
+}
+
+/* The site-wide .grid-2 (from style.css) is a page-layout grid with a
+   32px gap meant for full-width content columns. Inside the quiz card
+   it's reused for compact 2-up answer buttons (team size, frequency,
+   cost options), which needs a tighter gap and an earlier collapse
+   breakpoint. Scoped to #app so the global .grid-2 elsewhere on the
+   site is untouched. */
+#app .grid-2 {
+  gap: 10px;
+}
+
+@media (max-width: 480px) {
+  #app .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* -----------------------------------------------------------
+   NAV ROW (Back / Next)
+----------------------------------------------------------- */
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-text {
+  background: none;
+  color: var(--color-stone);
+  padding: 12px 8px;
+}
+
+.btn-text:hover { color: var(--color-primary); }
+
+/* -----------------------------------------------------------
+   EMAIL CAPTURE STEP
+----------------------------------------------------------- */
+input[type="email"], input[type="text"] {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 16px;
+  padding: 13px 16px;
+  border: 1.5px solid var(--color-light);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+
+input[type="email"]:focus, input[type="text"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+input[type="email"]:focus-visible, input[type="text"]:focus-visible {
+  outline: 3px solid #F5F0EB;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #1B3A5C;
+}
+
+.field-note {
+  font-size: 13px;
+  color: var(--color-stone);
+  margin-bottom: 20px;
+}
+
+/* -----------------------------------------------------------
+   RESULTS SCREEN
+----------------------------------------------------------- */
+.result-headline {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent-text);
+  margin-bottom: 10px;
+}
+
+.result-category {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.result-copy {
+  font-size: 16px;
+  color: var(--color-ink);
+  margin-bottom: 24px;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--color-stone);
+  margin-bottom: 5px;
+}
+
+.bar-label .winner-tag {
+  color: var(--color-accent-text);
+  font-weight: 500;
+}
+
+.bar-track {
+  height: 8px;
+  background: var(--color-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--color-primary);
+  transition: width 0.6s ease;
+  width: 0%;
+}
+
+.bar-fill.winner { background: var(--color-accent); }
+
+.cost-note {
+  background: var(--color-bg);
+  border-left: 3px solid var(--color-accent);
+  padding: 14px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--color-ink);
+  margin-bottom: 28px;
+}
+
+.divider-line {
+  height: 1px;
+  background: var(--color-light);
+  margin: 28px 0;
+}
+
+.next-step-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+  margin-bottom: 10px;
+}
+
+.next-step-copy {
+  font-size: 15px;
+  color: var(--color-ink);
+  margin-bottom: 24px;
+}
+
+.cta-block {
+  text-align: center;
+}
+
+.cta-block .btn-cta {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Secondary, opt-in fallback for people who don't want to book straight
+   off the form — deliberately smaller and quieter than the main CTA. */
+.results-secondary-link {
+  display: inline-block;
+  margin-top: 14px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-stone);
+  text-decoration: underline;
+}
+
+.result-cta {
+  display: block;
+  text-decoration: none;
+}
+
+.results-secondary-link:hover { color: var(--color-primary); }
+
+/* -----------------------------------------------------------
+   MOTION
+----------------------------------------------------------- */
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { animation: none; }
+  .progress-fill, .bar-fill { transition: none; }
+}

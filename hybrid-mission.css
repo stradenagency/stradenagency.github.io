@@ -1,0 +1,114 @@
+:root {
+  --paper: #f8f6f2;
+  --card-line: rgba(27,58,92,.14);
+  --card-shadow: 0 18px 50px rgba(27,58,92,.09);
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 3px solid #F5F0EB;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #1B3A5C;
+}
+
+body {
+  background:
+    linear-gradient(90deg, rgba(27,58,92,.025) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--paper);
+}
+
+.site-nav {
+  background: rgba(248,246,242,.92);
+  border-bottom: 1px solid rgba(27,58,92,.18);
+  box-shadow: 0 8px 30px rgba(27,58,92,.045);
+}
+
+.btn { border-radius: 9px; box-shadow: 0 8px 22px rgba(27,58,92,.10); }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  background:
+    repeating-linear-gradient(135deg, rgba(27,58,92,.07) 0 1px, transparent 1px 9px) top / 100% 92px no-repeat,
+    radial-gradient(circle at 86% 66%, rgba(212,227,238,.72), transparent 28%);
+}
+
+.hero::after {
+  content: "01";
+  position: absolute;
+  right: 4%;
+  bottom: -30px;
+  font-family: var(--font-head);
+  font-size: min(310px, 28vw);
+  line-height: 1;
+  font-weight: 800;
+  color: rgba(27,58,92,.055);
+}
+
+.hero .max-w { position: relative; z-index: 1; }
+.hero h1 { text-wrap: balance; }
+
+article > .max-w {
+  max-width: 900px;
+  margin-top: -30px;
+  padding: 56px 52px;
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,.94);
+  border: 1px solid var(--card-line);
+  border-radius: 18px;
+  box-shadow: var(--card-shadow);
+}
+
+.statement {
+  margin-left: -52px;
+  margin-right: -52px;
+  padding: 52px;
+  border: 0;
+  background: var(--navy);
+}
+
+.statement p { color: #fff; }
+
+.statement + h2 { margin-top: 64px; }
+
+.triad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.triad-item {
+  display: block;
+  padding: 26px;
+  border: 1px solid var(--card-line) !important;
+  border-radius: 13px;
+  background: var(--paper);
+}
+
+.triad-num { display: block; margin-bottom: 26px; }
+
+.close-cta {
+  padding: 34px;
+  border-radius: 14px;
+  background: #eef3f7;
+  border: 1px solid var(--card-line);
+}
+
+@media (max-width: 760px) {
+  body { overflow-x: hidden; }
+  .max-w, .nav-inner { padding-left: 20px; padding-right: 20px; }
+  .nav-inner { height: 64px; }
+  .nav-links { gap: 10px; }
+  .nav-links .nav-link { display: none; }
+  .nav-links .btn { padding: 10px 14px !important; font-size: 12.5px !important; }
+  .hero { min-height: 480px; }
+  .hero::after { display: none; }
+  article > .max-w { margin: 0 16px; padding: 38px 24px; }
+  .statement { margin-left: -24px; margin-right: -24px; padding: 38px 24px; }
+  article h2 { margin-top: 48px; }
+  .triad { grid-template-columns: 1fr; }
+}

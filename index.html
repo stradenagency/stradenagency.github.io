@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Straden — AI-Powered Operating Systems for Service Businesses</title>
+<meta name="description" content="Straden builds and operates intelligent AI agents that coordinate workflows across your people and tools, helping service businesses recover time, prevent revenue leakage, and complete more valuable work.">
+<link rel="canonical" href="https://straden.ca/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#1B3A5C">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<meta property="og:site_name" content="Straden">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Straden — AI-Powered Operating Systems for Service Businesses">
+<meta property="og:description" content="Intelligent agents that coordinate workflows across your people and tools—helping recover time, protect revenue, and complete more valuable work.">
+<meta property="og:url" content="https://straden.ca/">
+<meta property="og:image" content="https://straden.ca/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Straden — intelligent operating systems for service businesses">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Straden — AI-Powered Operating Systems for Service Businesses">
+<meta name="twitter:description" content="Recover time. Protect revenue. Complete more valuable work.">
+<meta name="twitter:image" content="https://straden.ca/assets/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="assets/js/nav.js" defer></script>
+<style>
+:root{
+  --navy:#1B3A5C; --ember:#E07A45; --ember-text:#A84A20; --ember-text-on-dark:#F29A6B; --bg:#F5F0EB; --surface:#fff;
+  --ink:#1F1F1E; --stone:#6B7280; --line:#E9E4DF; --mist:#D4E3EE;
+  --font-head:'Plus Jakarta Sans',sans-serif; --font-body:'Inter',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--font-head);color:var(--navy);line-height:1;letter-spacing:-.02em}
+a{color:inherit}
+.max-w{max-width:1200px;margin:0 auto;padding:0 32px}
+.section{padding:88px 0}
+@media (max-width:768px){.section{padding:56px 0}}
+
+.eyebrow{display:block;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ember-text);margin-bottom:18px}
+.rule{width:56px;height:4px;background:var(--ember);margin-bottom:22px;border-radius:2px}
+.rule.on-navy{background:var(--ember)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-head);font-size:15px;font-weight:700;padding:17px 30px;border-radius:2px;border:2px solid transparent;cursor:pointer;text-decoration:none;transition:transform .12s ease;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-cta{background:var(--ember);color:#141414}
+.btn-secondary{background:transparent;color:var(--navy);border-color:var(--navy)}
+.btn-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+
+.site-nav{position:sticky;top:0;z-index:50;background:rgba(245,240,235,.94);backdrop-filter:blur(10px);border-bottom:2px solid var(--navy)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-head);font-weight:800;font-size:17px;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo .dot{width:8px;height:8px;background:var(--ember);border-radius:50%}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-link{font-family:var(--font-head);font-size:14px;font-weight:600;color:var(--ink);text-decoration:none}
+
+/* HERO */
+.hero{padding:96px 0 80px;position:relative;overflow:hidden}
+.hero-ghost{position:absolute;top:-40px;right:-20px;font-size:min(420px,32vw);font-weight:800;color:var(--navy);opacity:.05;line-height:1;pointer-events:none;z-index:0;font-family:var(--font-head)}
+.hero-inner{position:relative;z-index:1}
+.hero h1{font-size:clamp(42px,7vw,92px);font-weight:800;letter-spacing:-.03em;max-width:1000px;margin-bottom:32px}
+.hero-lead{font-size:20px;color:var(--stone);line-height:1.55;max-width:720px;margin-bottom:36px}
+.hero-lead em{font-style:normal;color:var(--navy);font-weight:600}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px}
+.hero-line{margin-top:22px;font-size:14px;color:var(--navy);font-weight:600;line-height:1.55;max-width:760px}
+
+/* PROBLEM */
+.p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px}
+.p-box{padding:0 28px 0 0;border-right:1px solid var(--line)}
+.p-box:last-child{border-right:none;padding-right:0}
+.p-box:not(:first-child){padding-left:28px}
+.p-box b{display:block;font-size:clamp(19px,2vw,23px);font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.15}
+.p-box p{font-size:14.5px;color:var(--stone);line-height:1.65}
+.p-close{margin-top:36px;font-size:19px;font-weight:600;color:var(--navy);max-width:820px;line-height:1.45;font-family:var(--font-head)}
+
+/* MECHANISM — full navy statement */
+.mech{background:var(--navy);padding:80px 0}
+.mech p{font-family:var(--font-head);font-size:clamp(24px,3.4vw,38px);font-weight:700;color:#fff;line-height:1.25;max-width:900px}
+.mech p .accent{color:var(--ember-text-on-dark)}
+
+/* MAP as stacked list */
+.map-list{margin-top:20px}
+.map-row{display:grid;grid-template-columns:110px 260px 1fr;gap:24px;align-items:baseline;padding:30px 0;border-top:2px solid var(--navy)}
+.map-list .map-row:last-child{border-bottom:2px solid var(--navy)}
+.map-idx{font-family:var(--font-head);font-size:36px;font-weight:800;color:var(--ember-text);line-height:1}
+.map-row.more .map-idx{color:var(--stone)}
+.map-name{font-family:var(--font-head);font-size:clamp(22px,2.6vw,32px);font-weight:800;color:var(--navy)}
+.map-row.more .map-name{color:var(--stone)}
+.map-desc{font-size:15px;color:var(--stone);line-height:1.6;align-self:center}
+.map-desc strong{color:var(--navy);font-weight:700}
+.map-output{display:block;margin-top:5px}
+.map-intro{font-size:16px;color:var(--stone);max-width:760px;margin-top:18px;line-height:1.7}
+.map-note{margin-top:24px;font-size:13px;color:var(--stone)}
+@media (max-width:760px){.map-row{grid-template-columns:50px 1fr;}.map-desc{grid-column:1/-1}}
+
+/* FIT */
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:44px;border-top:2px solid var(--navy)}
+.fit-yes,.fit-no{padding:34px 34px 0 0}
+.fit-no{padding-left:34px;padding-right:0;border-left:1px solid var(--line)}
+.fit-grid h3{font-size:26px;margin-bottom:16px}
+.fit-no h3{color:var(--stone)}
+.fit-grid p{font-size:15.5px;color:var(--stone);line-height:1.7}
+.fit-grid p+p{margin-top:14px}
+
+/* BUILDS */
+.build-intro{font-size:16px;color:var(--stone);max-width:680px;margin-top:16px;line-height:1.6}
+.build{margin-top:56px;display:grid;grid-template-columns:120px 1fr;gap:28px}
+.build+.build{margin-top:56px;padding-top:56px;border-top:2px solid var(--navy)}
+.build-num{font-family:var(--font-head);font-size:64px;font-weight:800;color:var(--mist);line-height:1}
+.build-badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;margin-bottom:14px}
+.build-badge.front{background:var(--mist);color:var(--navy)}
+.build-badge.back{background:rgba(224,122,69,.14);color:var(--ember-text)}
+.build h3{font-size:clamp(26px,3vw,36px);margin-bottom:14px}
+.build>div>p{font-size:15.5px;color:var(--stone);line-height:1.7;max-width:680px}
+.build-list{margin-top:20px;display:flex;flex-direction:column;gap:14px}
+.build-list .item b{display:block;font-family:var(--font-head);font-size:15px;color:var(--navy);margin-bottom:3px}
+.build-list .item span{font-size:14px;color:var(--stone);line-height:1.55}
+.build-evidence-heading{margin-top:30px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--font-head);font-size:14px;font-weight:700;color:var(--navy)}
+.build-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:14px}
+.build-evidence{margin:0;background:#fff;border:1px solid var(--line);padding:10px}
+.build-evidence img{display:block;width:100%;height:auto;aspect-ratio:8/5;object-fit:cover}
+.build-evidence figcaption{padding:10px 4px 2px;font-size:12.5px;color:var(--stone);line-height:1.55}
+@media (max-width:640px){.build{grid-template-columns:1fr}.build-num{font-size:44px}}
+@media (max-width:760px){.build-evidence-grid{grid-template-columns:1fr}}
+
+/* GOVERNANCE — stacked statements */
+.gov-list{margin-top:20px}
+.gov-item{display:grid;grid-template-columns:90px 1fr;gap:24px;padding:26px 0;border-top:2px solid var(--navy)}
+.gov-list .gov-item:last-child{border-bottom:2px solid var(--navy)}
+.gov-item .n{font-family:var(--font-head);font-size:30px;font-weight:800;color:var(--ember-text)}
+.gov-item b{display:block;font-size:19px;font-weight:700;color:var(--navy);margin-bottom:6px;font-family:var(--font-head)}
+.gov-item p{font-size:14.5px;color:var(--stone);line-height:1.6}
+
+/* AI NOT SOFTWARE + OUTCOMES */
+.ai-lead{font-size:17px;color:var(--stone);max-width:760px;line-height:1.7;margin-top:18px}
+.out-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:2px solid var(--ember)}
+.out-box{padding:24px 24px 0 0;border-right:1px solid var(--line)}
+.out-box:last-child{border-right:none}
+.out-box:not(:first-child){padding-left:24px}
+.out-box b{display:block;font-size:19px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.out-box p{font-size:14.5px;color:var(--stone);line-height:1.6}
+
+/* MEMORY — huge navy statement, boldest moment */
+.memory{background:var(--navy);padding:110px 0}
+.memory .eyebrow{color:var(--ember-text-on-dark)}
+.memory h2{color:#fff;font-size:clamp(34px,5.4vw,66px);font-weight:800;line-height:1.06;max-width:980px;letter-spacing:-.03em}
+.memory h2 .accent{color:var(--ember-text-on-dark)}
+.memory p{margin-top:28px;color:rgba(255,255,255,.68);font-size:17px;line-height:1.7;max-width:640px}
+
+/* PROCESS */
+.proc-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border-top:2px solid var(--navy)}
+.proc-step{padding:26px 24px 0 0;border-right:1px solid var(--line)}
+.proc-step:last-child{border-right:none}
+.proc-step:not(:first-child){padding-left:24px}
+.proc-step .n{font-family:var(--font-head);font-size:40px;font-weight:800;color:var(--stone)}
+.proc-step:first-child .n{color:var(--ember-text)}
+.proc-step b{display:block;font-size:17px;font-weight:700;color:var(--navy);margin:10px 0 8px}
+.proc-step p{font-size:13px;color:var(--stone);line-height:1.6}
+.proc-note{margin-top:30px;font-size:13.5px;color:var(--stone)}
+
+/* FINAL CTA */
+.final{background:var(--bg);text-align:left;border-top:2px solid var(--navy);border-bottom:2px solid var(--navy)}
+.final h2{font-size:clamp(32px,5vw,56px);max-width:820px;margin-bottom:24px}
+.final p{color:var(--stone);font-size:17px;max-width:560px;margin-bottom:36px;line-height:1.6}
+.final-ctas{display:flex;gap:16px;flex-wrap:wrap}
+.final .btn-secondary{border-color:var(--navy)}
+
+/* FAQ */
+.faq-list{margin-top:36px}
+.faq-item{border-top:2px solid var(--navy)}
+.faq-item:last-child{border-bottom:2px solid var(--navy)}
+.faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 0;cursor:pointer;list-style:none;font-family:var(--font-head);font-size:clamp(18px,2.2vw,24px);font-weight:700;color:var(--navy)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .ind{font-size:28px;font-weight:400;color:var(--ember-text);flex-shrink:0;line-height:1}
+.faq-item[open] summary .ind{transform:rotate(45deg)}
+.faq-item p{font-size:15.5px;color:var(--stone);line-height:1.75;padding:0 0 28px;max-width:720px}
+.faq-item p a{color:var(--navy);font-weight:600;text-underline-offset:3px}
+
+/* FOOTER */
+.site-footer{background:var(--navy);color:#fff;padding:72px 0 0}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.16)}
+.footer-tag{color:rgba(255,255,255,.6);font-size:14px;line-height:1.65;max-width:270px;margin:14px 0 22px}
+.footer-col h5{font-family:var(--font-head);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ember-text-on-dark);margin-bottom:18px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:11px}
+.footer-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:14.5px}
+.footer-bottom{max-width:1200px;margin:0 auto;padding:22px 32px 28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12.5px;color:rgba(255,255,255,.45)}
+
+@media (max-width:900px){
+  .p-grid,.out-grid,.fit-grid{grid-template-columns:1fr;border-top:none}
+  .p-box,.out-box{border-right:none;padding:0 0 24px 0!important;border-bottom:1px solid var(--line)}
+  .fit-yes,.fit-no{border:none!important;padding:0 0 30px 0!important}
+  .proc-row{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr}
+}
+@media (max-width:640px){.proc-row{grid-template-columns:1fr}.proc-step{border-right:none!important;padding-left:0!important;padding-bottom:24px;border-bottom:1px solid var(--line)}}
+</style>
+<link rel="stylesheet" href="hybrid.css">
+<link rel="stylesheet" href="assets/css/nav.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">STRADEN<span class="dot"></span></a>
+    <button class="nav-toggle" type="button" aria-label="Open primary menu" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>Menu</button>
+    <div class="nav-links" id="primary-nav">
+      <a href="mission.html" class="nav-link">Mission</a>
+      <a href="audit.html" class="btn btn-cta" style="padding:11px 22px;font-size:13.5px">Free Mini Audit →</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content" tabindex="-1">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ghost">01</div>
+  <div class="max-w hero-inner">
+    <span class="eyebrow">Operated AI for service businesses</span>
+    <h1>Your business is busy. Too much time and revenue still slips through the gaps.</h1>
+    <p class="hero-lead">Straden builds and operates intelligent AI agents that coordinate workflows across the people and tools your business already uses. Each agent is given a job, the skills and memory to do it, and clear approval boundaries — then gets sharper as it learns from approved context, feedback, decisions, and outcomes.</p>
+    <div class="hero-ctas">
+      <a href="audit.html" class="btn btn-cta">Find What's Costing You Time or Revenue →</a>
+      <a href="#real-builds" class="btn btn-secondary">See a Real Build</a>
+    </div>
+    <p class="hero-line">Increase the productive and revenue-generating work your team can complete — without adding more chasing and administrative overhead.</p>
+  </div>
+</section>
+
+<!-- PROBLEM RECOGNITION -->
+<section class="section">
+  <div class="max-w">
+    <span class="eyebrow">Where growth gets expensive</span>
+    <h2 style="font-size:clamp(28px,3.6vw,46px);max-width:820px;letter-spacing:-.02em;line-height:1.1">The work is there. The gaps are costing you.</h2>
+    <p style="font-size:16px;color:var(--stone);max-width:740px;margin-top:20px;line-height:1.65">Revenue and capacity disappear when work stalls between people, tools, and next steps. The business stays busy, but too much effort goes into holding the operation together instead of completing valuable work.</p>
+    <div class="p-grid">
+      <div class="p-box"><b>Revenue leaks between the steps</b><p>Leads wait for follow-up. Estimates stall. Completed jobs do not trigger invoices. Payment issues surface later than they should.</p></div>
+      <div class="p-box"><b>Capacity disappears into coordination</b><p>Skilled people spend their time searching, copying, checking status, re-entering information, and reminding someone else what happens next.</p></div>
+      <div class="p-box"><b>Growth creates more owner dependency</b><p>Exceptions, approvals, and context keep routing through the same person, so more work creates more chasing instead of more operating leverage.</p></div>
+    </div>
+    <p class="p-close">The cost shows up twice: revenue that arrives late or never arrives, and hours your team cannot spend producing, serving customers, or growing the business.</p>
+  </div>
+</section>
+
+<!-- MECHANISM TRANSITION -->
+<section class="mech">
+  <div class="max-w">
+    <p>Something happens. The right agent reads the context, uses the <span class="accent">skills for its job</span>, moves the workflow across your tools, produces the next output, and brings judgment back to your team when approval matters.</p>
+  </div>
+</section>
+
+<!-- OPERATING SYSTEM MAP -->
+<section class="section">
+  <div class="max-w">
+    <span class="eyebrow">Build the team operating system</span>
+    <h2 style="font-size:clamp(28px,3.6vw,46px);max-width:900px;letter-spacing:-.02em;line-height:1.1">Build one working system at a time. Connect the operating system your team runs through.</h2>
+    <p class="map-intro">Each agent has a defined role, relevant skills, access to the right tools and context, memory of how your business works, and clear boundaries for when a person must approve the next step. Related agents work together as a system. Those systems connect across the business.</p>
+    <div class="map-list">
+      <div class="map-row"><span class="map-idx">01</span><span class="map-name">Revenue System</span><span class="map-desc"><strong>Runs:</strong> lead intake, qualification, follow-up, estimating, and proposals.<span class="map-output"><strong>Outputs:</strong> lead briefs, drafted follow-ups, estimates, proposals, and pipeline status.</span></span></div>
+      <div class="map-row"><span class="map-idx">02</span><span class="map-name">Delivery &amp; Operations</span><span class="map-desc"><strong>Runs:</strong> work intake, scheduling, dispatch, project coordination, approvals, and handoffs.<span class="map-output"><strong>Outputs:</strong> work orders, schedules, status updates, completed handoffs, and exception alerts.</span></span></div>
+      <div class="map-row"><span class="map-idx">03</span><span class="map-name">Customer System</span><span class="map-desc"><strong>Runs:</strong> customer communication, service requests, support, and client-success follow-through.<span class="map-output"><strong>Outputs:</strong> updates, response drafts, next-step reminders, and organized account context.</span></span></div>
+      <div class="map-row"><span class="map-idx">04</span><span class="map-name">Finance System</span><span class="map-desc"><strong>Runs:</strong> billing triggers, invoicing, payment-status tracking, and collections follow-up.<span class="map-output"><strong>Outputs:</strong> invoices, payment reports, collection messages, and cash-status visibility.</span></span></div>
+      <div class="map-row more"><span class="map-idx">05+</span><span class="map-name">Management &amp; Knowledge</span><span class="map-desc"><strong>Runs:</strong> reporting, organizational memory, performance monitoring, and management review.<span class="map-output"><strong>Outputs:</strong> daily summaries, weekly reports, decision briefs, risk alerts, and retained business context.</span></span></div>
+    </div>
+    <p class="map-note">Each system is useful on its own. Connected across team handoffs, they become the operating system for the business. Straden starts with the largest time drain or revenue leak, proves that system, and expands in phases.</p>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR / ISN'T -->
+<section class="section" style="background:var(--surface)">
+  <div class="max-w">
+    <span class="eyebrow">Is this you?</span>
+    <h2 style="font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em">Built for service-based businesses.</h2>
+    <div class="fit-grid">
+      <div class="fit-yes"><h3>Who it's for</h3><p>Work that moves through more than one person or step to get done — a job that gets scheduled and delivered, a case that gets handled, a project that gets built. That shows up across trades and field service businesses, agencies, clinics, and other professional-services firms — the pattern matters more than the industry.</p></div>
+      <div class="fit-no"><h3>Who it isn't for</h3><p>Solo operators and very early-stage businesses with no team to coordinate yet. There's not enough moving between people for Straden to earn its place.</p><p>And it's not for anyone who just wants another piece of software to manage themselves. Straden runs the system for you — it doesn't hand over a dashboard and walk away.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REAL BUILDS -->
+<section class="section" id="real-builds">
+  <div class="max-w">
+    <span class="eyebrow">Two real builds, one operating system</span>
+    <h2 style="font-size:clamp(28px,3.6vw,46px);max-width:820px;letter-spacing:-.02em;line-height:1.1">Not a hypothetical. Two real clients, in progress right now.</h2>
+    <p class="build-intro">One build is the front half of an operating system — the revenue engine. The other is the back half — operations and finance. Together they show what "front to back" actually means.</p>
+
+    <div class="build">
+      <div class="build-num">01</div>
+      <div>
+        <span class="build-badge front">Front of house</span>
+        <h3>Royalty Painting</h3>
+        <p>A GTA painting contractor running sales, quoting, scheduling, and the work itself — no CRM, no pipeline, no way to bring in leads without doing it all by hand.</p>
+        <div class="build-list">
+          <div class="item"><b>Lead Discovery &amp; Outreach</b><span>Finds and scores leads, first-contact outreach written in his own voice</span></div>
+          <div class="item"><b>Quoting &amp; Job Confirmation</b><span>Standardized quotes with his approval, then job confirmation and painter dispatch</span></div>
+          <div class="item"><b>Painter Roster</b><span>Sourcing and vetting painters so delegation is actually possible</span></div>
+          <div class="item"><b>Invoicing &amp; Payment Follow-up</b><span>Billing and the payment chasing he currently does from memory</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="build">
+      <div class="build-num">02</div>
+      <div>
+        <span class="build-badge back">Back office</span>
+        <h3>Reclaim Environmental</h3>
+        <p>An environmental services firm (site assessments, permitting, remediation support) where project status and invoicing depended on someone remembering to follow up.</p>
+        <div class="build-list">
+          <div class="item"><b>Projects Agent</b><span>Structures every new project, sets up the folder system, files documents automatically, and tracks milestones as work moves.</span></div>
+          <div class="item"><b>Finance Agent</b><span>Triggers invoicing the moment a milestone is done, then follows up automatically until it's paid.</span></div>
+        </div>
+        <div class="build-evidence-heading">Client-safe interface evidence from the supervised pilot</div>
+        <div class="build-evidence-grid">
+          <figure class="build-evidence">
+            <img src="assets/img/evidence/reclaim-project-ops-pilot.png" width="1280" height="800" loading="lazy" decoding="async" alt="Reclaim Project Ops assistant confirming that it found and verified a pilot project folder without changing files">
+            <figcaption>Project Operations verifies the requested folder and reports the action boundary: no files were changed.</figcaption>
+          </figure>
+          <figure class="build-evidence">
+            <img src="assets/img/evidence/reclaim-finance-pilot.png" width="1280" height="800" loading="lazy" decoding="async" alt="Reclaim Finance assistant reporting that the invoice queue is ready for review without creating or changing invoices or payments">
+            <figcaption>Finance reports the review state without creating or changing an invoice or payment.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOVERNANCE -->
+<section class="section" style="background:var(--surface)">
+  <div class="max-w">
+    <span class="eyebrow">How we operate</span>
+    <h2 style="font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em">Governance and rigor, in plain English.</h2>
+    <div class="gov-list">
+      <div class="gov-item"><span class="n">01</span><div><b>Our agents have memory.</b><p>They remember what they've handled and learned about your business — not just the task in front of them.</p></div></div>
+      <div class="gov-item"><span class="n">02</span><div><b>You set the boundaries.</b><p>What runs on its own, and what always needs a person first.</p></div></div>
+      <div class="gov-item"><span class="n">03</span><div><b>Built from tested pieces.</b><p>Not reinvented from scratch for every client.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AI NOT SOFTWARE + OUTCOMES -->
+<section class="section">
+  <div class="max-w">
+    <span class="eyebrow">How this actually happens</span>
+    <h2 style="font-size:clamp(28px,3.6vw,46px);max-width:820px;letter-spacing:-.02em;line-height:1.1">This isn't software you manage. It's AI doing the work.</h2>
+    <p class="ai-lead">You don't get a new dashboard to check every morning, or a new app for your team to learn. We design the agents with you, connect them to the tools you already run, and from there they go to work — orchestrating the handoffs, triggers, and follow-through, inside the parameters we set together.</p>
+    <div class="out-grid">
+      <div class="out-box"><b>Keep work moving</b><p>Agents run the repeatable workflows without relying on reminders.</p></div>
+      <div class="out-box"><b>Protect revenue</b><p>Lead response, billing, and follow-up become one connected system.</p></div>
+      <div class="out-box"><b>Create leverage</b><p>Tactical coordination gets handled inside clear boundaries.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMORY -->
+<section class="memory">
+  <div class="max-w">
+    <span class="eyebrow">Why it gets better over time</span>
+    <h2>Your system should get <span class="accent">smarter</span> the longer it runs — about your business.</h2>
+    <p>A Straden agent keeps what it's learned: your rules, your exceptions, your corrections. This learning stays inside your system — nothing about how your business runs is shared with, or learned from, any other client.</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="max-w">
+    <span class="eyebrow">How working together goes</span>
+    <h2 style="font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em">A real process, not instant software.</h2>
+    <div class="proc-row">
+      <div class="proc-step"><span class="n">01</span><b>Mini Audit</b><p>A free 3-minute assessment showing where your business may be losing the most time or revenue.</p></div>
+      <div class="proc-step"><span class="n">02</span><b>Full Audit</b><p>A paid 45-to-60-minute working session followed by the recommended solution, implementation plan, timeline, and cost.</p></div>
+      <div class="proc-step"><span class="n">03</span><b>Implementation</b><p>We design, build, test, and launch the approved system around how your team and tools already work.</p></div>
+      <div class="proc-step"><span class="n">04</span><b>Operate</b><p>We operate, monitor, maintain, and improve the system under an ongoing retainer. You retain your data and judgment.</p></div>
+    </div>
+    <p class="proc-note">The Full Audit is $1,000 CAD and is credited toward implementation if you proceed. Implementation and ongoing operating costs are set out in the plan.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section final">
+  <div class="max-w">
+    <h2>Find where your operating system should begin.</h2>
+    <p>The free 3-minute Mini Audit identifies where work may be costing the most time or revenue — and which function may be the strongest place to start.</p>
+    <div class="final-ctas">
+      <a href="audit.html" class="btn btn-cta">Find the Bottleneck →</a>
+      <a href="contact.html" class="btn btn-secondary">Already sold? Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="max-w">
+    <span class="eyebrow">Straight answers</span>
+    <h2 style="font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em">Questions people ask us.</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary><span>What does Straden actually build?</span><span class="ind" aria-hidden="true">+</span></summary>
+        <p>Straden builds and operates intelligent AI agents that perform defined jobs across your business. Each agent receives the skills, instructions, tool access, memory, and decision boundaries required for its role. Related agents can form systems for revenue, operations, customer service, finance, reporting, and other functions. We connect those systems over time to create the operating system your team works through.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span>Where do we start?</span><span class="ind" aria-hidden="true">+</span></summary>
+        <p>We start with the workflow — or closely connected group of workflows — creating the greatest loss of time, revenue, or operating capacity. That could be one problem, such as lead follow-up, or a connected set such as scheduling, completed-job handoffs, invoicing, and payment tracking. We identify the smallest meaningful system that can solve the underlying problem, prove it, and then expand into adjacent workflows.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span>Will we have to replace the tools we already use?</span><span class="ind" aria-hidden="true">+</span></summary>
+        <p>Usually, no. Straden is designed to coordinate work across the tools your business already depends on, including email, file storage, accounting platforms, customer records, spreadsheets, project systems, and other connected applications. If an existing tool creates a serious limitation, we explain that during the Full Audit rather than quietly forcing a replacement.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span>How do the agents work with our team?</span><span class="ind" aria-hidden="true">+</span></summary>
+        <p>Agents monitor connected workflows, interpret relevant context, use their assigned skills, and move work toward its next required outcome. Depending on the role, an agent might route a request, prepare an estimate, update a project record, organize a document, trigger an invoice, draft a customer response, or flag an exception. Important decisions and sensitive actions can be configured to require approval from the appropriate person.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span>What happens if an agent gets something wrong?</span><span class="ind" aria-hidden="true">+</span></summary>
+        <p>We design approval boundaries, validation steps, exception handling, and escalation paths around the risk of each workflow. Low-risk, repeatable work may proceed automatically. Actions involving customers, money, sensitive information, or significant business judgment can require review before completion. When something is unclear, the system should pause, surface the relevant context, and ask the appropriate person instead of inventing an answer.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span>How do the agents improve over time?</span><span class="ind" aria-hidden="true">+</span></summary>
+        <p>Agents can retain approved business context, decisions, outcomes, corrections, and operating knowledge so they become more useful within your organization. That does not mean uncontrolled self-learning. Memory, feedback, permissions, and behaviour are governed within the system so agents can understand your business more accurately while remaining inside their defined roles and approval boundaries.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span>What happens during the Full Audit, and how long does implementation take?</span><span class="ind" aria-hidden="true">+</span></summary>
+        <p>The Full Audit begins with a focused 45-to-60-minute working session covering the main pain point, connected workflows, tools, information, handoffs, approvals, and business impact. Following the session, Straden delivers the diagnosis, recommended system or systems, proposed workflows and integrations, approval boundaries, implementation plan, timeline, and cost. Implementation timing depends on that scope and moves through design, build, testing, launch, and ongoing operation.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span>What does this cost?</span><span class="ind" aria-hidden="true">+</span></summary>
+        <p>The Full Audit is $1,000 CAD. If you proceed with the recommended system, the full audit fee is credited toward implementation. Implementation pricing depends on the workflows, integrations, data, approvals, and systems involved. Your plan will include the implementation cost and the monthly retainer required for Straden to operate, monitor, maintain, and improve the system.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span>Who owns our data and business information?</span><span class="ind" aria-hidden="true">+</span></summary>
+        <p>You retain ownership of your business data, records, documents, and intellectual property. Straden retains its reusable software frameworks, general methods, agent skills, templates, and other underlying components. Permitted cross-business analysis uses anonymized information designed not to identify the originating client, and clients may opt out. More detail is available in our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Use</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="max-w footer-top">
+    <div>
+      <a class="logo" href="index.html" style="color:#fff">STRADEN<span class="dot"></span></a>
+      <p class="footer-tag">An operated system for service businesses that are tired of chasing their own work.</p>
+      <a href="audit.html" class="btn btn-cta" style="font-size:13.5px;padding:11px 22px">Free Mini Audit →</a>
+    </div>
+    <div class="footer-col">
+      <h5>Straden</h5>
+      <ul class="footer-links"><li><a href="mission.html">Mission</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h5>Get Started</h5>
+      <ul class="footer-links">
+        <li><a href="audit.html">Free Mini Audit</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Straden.</span>
+    <span>Built for owner-operated service businesses.</span>
+  </div>
+</footer>
+
+</body>
+</html>
