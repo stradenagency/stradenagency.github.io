@@ -1,120 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-CA">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Page Not Found | Straden</title>
-<meta name="description" content="The page you requested could not be found.">
-<meta name="robots" content="noindex,follow">
-<meta name="theme-color" content="#1B3A5C">
-<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="interior.css">
-<link rel="stylesheet" href="assets/css/nav.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
-<link rel="stylesheet" href="assets/css/site-shell.css">
-<script src="assets/js/nav.js" defer></script>
-<style>
-.not-found {
-  min-height: 68vh;
-  display: grid;
-  place-items: center;
-  padding: 96px 0;
-}
-.not-found-inner { max-width: 760px; }
-.not-found-code {
-  margin-bottom: 20px;
-  color: var(--ember-text);
-  font-family: var(--font-head);
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-.not-found h1 {
-  max-width: 680px;
-  font-size: clamp(42px, 7vw, 76px);
-}
-.not-found p {
-  max-width: 620px;
-  margin-top: 24px;
-  color: var(--stone);
-  font-size: 18px;
-  line-height: 1.7;
-}
-.not-found-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 34px;
-}
-@media (max-width: 480px) {
-  .not-found { padding: 72px 0; }
-  .not-found-actions .btn {
-    width: 100%;
-    justify-content: center;
-    white-space: normal;
-    text-align: center;
-  }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071a29">
+  <meta name="description" content="The page you requested could not be found.">
+  <title>Page Not Found | Straden</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <meta property="og:site_name" content="Straden">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Page Not Found | Straden">
+  <meta property="og:description" content="The page you requested could not be found.">
+  <meta property="og:url" content="https://www.straden.ca/">
+  <meta property="og:image" content="https://www.straden.ca/assets/img/og-home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Straden: Get the leverage of AI. We handle the rest.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Page Not Found | Straden">
+  <meta name="twitter:description" content="The page you requested could not be found.">
+  <meta name="twitter:image" content="https://www.straden.ca/assets/img/og-home.png">
+  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
-
-<nav class="site-nav" aria-label="Primary">
-  <div class="nav-inner">
-    <a class="logo" href="/" aria-label="Straden home"><span class="wordmark">STRADEN</span><span class="dot" aria-hidden="true"></span></a>
-    <button class="nav-toggle" type="button" aria-label="Open primary menu" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>Menu</button>
-    <div class="nav-links" id="primary-nav">
-      <a href="/mission" class="nav-link">Mission</a>
-      <a href="/contact" class="nav-link">Contact</a>
-      <a href="/audit" class="btn btn-cta nav-primary-action">Find Your First Agent →</a>
+<body class="page-404">
+  <svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-turn" viewBox="0 0 24 24"><path d="M4 8h10a5 5 0 0 1 5 5v4m-4-4 4 4 4-4"/></symbol>
+    <symbol id="icon-branch" viewBox="0 0 24 24"><path d="M5 4v9a5 5 0 0 0 5 5h10M5 9h11a4 4 0 0 0 4-4M5 9v10"/><circle cx="5" cy="4" r="1.5"/><circle cx="20" cy="5" r="1.5"/><circle cx="20" cy="18" r="1.5"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6zM14 2v5h4M9 12h6M9 16h6"/></symbol>
+    <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="4" cy="5" r="2"/><circle cx="20" cy="19" r="2"/><path d="M6 5h9a4 4 0 0 1 0 8H9a3 3 0 0 0 0 6h9"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="shell nav-shell">
+      <a href="/" class="brand" aria-label="Straden home"><span class="brand-word">STRADEN</span><span class="brand-dot" aria-hidden="true"></span></a>
+      <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a href="/#system">What we build</a>
+        <a href="/#process">How it works</a>
+        <a href="/#real-work">Real work</a>
+        <a href="/about">About</a>
+        <a href="/#questions">Questions</a>
+      </nav>
+      <a class="nav-audit" href="/audit" data-track="mini_audit_click" data-track-location="header"><span class="nav-free">Free</span>3-min Mini Audit</a><a class="nav-cta nav-start" href="https://calendar.app.google/kBcDhYi7tCNre9oV9" target="_blank" rel="noopener" data-track="book_call_click" data-track-location="header">Book a call <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+      <button type="button" class="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
     </div>
-  </div>
-</nav>
+  </header>
 
-<main class="not-found" id="main-content" tabindex="-1">
-  <div class="max-w">
-    <div class="not-found-inner">
-      <div class="not-found-code">Error 404</div>
-      <h1>We could not find that page.</h1>
-      <p>The page may have moved, or the address may be incomplete. Return to the homepage or use the free Mini Audit to find where work is getting stuck.</p>
-      <div class="not-found-actions">
-        <a href="/" class="btn btn-secondary">Back to the website</a>
-        <a href="/audit" class="btn btn-cta">Find Your First Agent →</a>
+  <main id="main">
+    <section class="page-hero page-hero-tall">
+      <div class="hero-grid" aria-hidden="true"></div><div class="hero-glow page-hero-glow" aria-hidden="true"></div>
+      <div class="shell page-hero-inner">
+        <span class="r7-eyebrow page-eyebrow">Error 404</span>
+        <h1>We could not find that page.</h1>
+        <p class="page-hero-sub">The page may have moved, or the address may be incomplete. Return to the homepage or use the free Mini Audit to find where work is getting stuck.</p>
+        <div class="hero-actions page-hero-actions"><a class="button button-light" href="/">Back to the website</a><a class="button button-primary" href="/audit" data-track="mini_audit_click" data-track-location="404:page-hero">Take the 3-minute Mini Audit <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
       </div>
-    </div>
-  </div>
-</main>
-
-<footer class="site-footer">
-  <div class="max-w footer-top">
-    <div class="footer-brand">
-      <a class="logo" href="/" aria-label="Straden home"><span class="wordmark">STRADEN</span><span class="dot" aria-hidden="true"></span></a>
-      <p class="footer-tag">An operated agent system for service businesses with work stuck between people and tools.</p>
-      <a href="/audit" class="btn btn-cta footer-primary-action">Find Your First Agent →</a>
-    </div>
-    <div class="footer-col">
-      <h5>Explore</h5>
-      <ul class="footer-links">
-        <li><a href="/mission">Mission</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Get started</h5>
-      <ul class="footer-links">
-        <li><a href="/audit">Find Your First Agent</a></li>
-        <li><a href="https://calendar.app.google/kBcDhYi7tCNre9oV9">Book an Intro Call</a></li>
-        <li><a href="/privacy">Privacy Policy</a></li>
-        <li><a href="/terms">Terms of Use</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom"><span>© 2026 Straden.</span><span>Built for owner-operated service businesses.</span></div>
-</footer>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-main"><div><a href="/" class="brand" aria-label="Straden home"><span class="brand-word">STRADEN</span><span class="brand-dot" aria-hidden="true"></span></a><p>Leverage, built. Productivity, gained.</p></div><div class="footer-nav"><a href="/#system">What we build</a><a href="/#real-work">Real work</a><a href="/about">About</a><a href="/audit">Mini Audit</a><a href="/contact">Contact</a><a href="/integration">Integration</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div><div class="shell footer-bottom"><span>© Straden</span><span>You get the leverage and productivity from AI. We handle the rest.</span></div></footer>
+  <script src="/assets/js/analytics.js" defer></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>

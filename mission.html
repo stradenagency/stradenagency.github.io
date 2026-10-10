@@ -1,195 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-CA">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Our Mission | Straden</title>
-<meta name="description" content="Why Straden builds agent teams that remove routine coordination while people keep judgment, relationships, and strategic work.">
-<link rel="canonical" href="https://www.straden.ca/mission">
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#1B3A5C">
-<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-<meta property="og:site_name" content="Straden">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Our Mission | Straden">
-<meta property="og:description" content="We build agent teams that remove routine coordination while people keep judgment, relationships, and strategic work.">
-<meta property="og:url" content="https://www.straden.ca/mission">
-<meta property="og:image" content="https://www.straden.ca/assets/img/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Straden intelligent operating systems for service businesses">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Our Mission | Straden">
-<meta name="twitter:description" content="More leverage, less operational drag, and more room for valuable work.">
-<meta name="twitter:image" content="https://www.straden.ca/assets/img/og.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="assets/js/nav.js" defer></script>
-<style>
-:root{
-  --navy:#1B3A5C; --ember:#E07A45; --ember-text:#A84A20; --ember-text-on-dark:#F29A6B; --bg:#F5F0EB; --surface:#fff;
-  --ink:#1F1F1E; --stone:#6B7280; --line:#E9E4DF; --mist:#D4E3EE;
-  --font-head:'Plus Jakarta Sans',sans-serif; --font-body:'Inter',sans-serif;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
-h1,h2{font-family:var(--font-head);color:var(--navy);line-height:1;letter-spacing:-.02em}
-a{color:inherit}
-.max-w{max-width:820px;margin:0 auto;padding:0 32px}
-.eyebrow{display:block;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ember-text);margin-bottom:18px}
-.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-head);font-size:15px;font-weight:700;padding:17px 30px;border-radius:2px;border:2px solid transparent;cursor:pointer;text-decoration:none}
-.btn-cta{background:var(--ember);color:#141414}
-
-.site-nav{position:sticky;top:0;z-index:50;background:rgba(245,240,235,.94);backdrop-filter:blur(10px);border-bottom:2px solid var(--navy)}
-.nav-inner{max-width:820px;margin:0 auto;padding:0 32px;height:70px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--font-head);font-weight:800;font-size:17px;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:8px}
-.logo .dot{width:8px;height:8px;background:var(--ember);border-radius:50%}
-.nav-link{font-family:var(--font-head);font-size:14px;font-weight:600;color:var(--ink);text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:32px}
-
-.hero{padding:88px 0 56px}
-.hero h1{font-size:clamp(36px,6.4vw,68px);font-weight:800;margin-bottom:30px}
-.lede{font-size:19px;color:var(--stone);line-height:1.6;max-width:700px}
-
-article{padding-bottom:60px}
-article p{font-size:16px;color:var(--ink);line-height:1.8;max-width:700px}
-article p+p{margin-top:22px}
-article h2{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.12;max-width:700px;margin:64px 0 20px;text-wrap:balance}
-article h2+p{margin-top:0}
-
-.statement{margin:52px 0;padding:44px 0;border-top:3px solid var(--navy);border-bottom:3px solid var(--navy)}
-.statement p{font-family:var(--font-head);font-size:clamp(24px,3.6vw,38px);font-weight:800;color:var(--navy);line-height:1.15;letter-spacing:-.02em;max-width:none}
-
-.triad{margin-top:52px}
-.triad-item{padding:28px 0;border-top:2px solid var(--navy)}
-.triad-item:last-child{border-bottom:2px solid var(--navy)}
-.triad-item b{display:block;font-family:var(--font-head);color:var(--navy);font-size:19px;font-weight:700;margin-bottom:10px;line-height:1.25}
-.triad-item p{font-size:15px;color:var(--stone);line-height:1.7;max-width:600px}
-
-.close-cta{margin-top:56px}
-.close-cta p{font-size:20px;color:var(--navy);font-weight:700;margin-bottom:22px;font-family:var(--font-head);max-width:600px}
-
-.site-footer{background:var(--navy);color:#fff;padding:72px 0 0;margin-top:20px}
-.footer-top{max-width:820px;margin:0 auto;padding:0 32px 44px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;border-bottom:1px solid rgba(255,255,255,.16)}
-.footer-tag{color:rgba(255,255,255,.6);font-size:14px;line-height:1.65;max-width:270px;margin:14px 0 22px}
-.footer-col h5{font-family:var(--font-head);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ember-text-on-dark);margin-bottom:18px}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:11px}
-.footer-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:14.5px}
-.footer-bottom{max-width:820px;margin:0 auto;padding:22px 32px 28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12.5px;color:rgba(255,255,255,.45)}
-@media (max-width:640px){.footer-top{grid-template-columns:1fr}}
-</style>
-<link rel="stylesheet" href="hybrid-mission.css?v=20260826-2">
-<link rel="stylesheet" href="assets/css/nav.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
-<link rel="stylesheet" href="assets/css/site-shell.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071a29">
+  <meta name="description" content="Straden&#x27;s mission now lives on the About page.">
+  <title>About Straden</title>
+  <link rel="canonical" href="https://www.straden.ca/about">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta property="og:site_name" content="Straden">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Straden">
+  <meta property="og:description" content="Straden&#x27;s mission now lives on the About page.">
+  <meta property="og:url" content="https://www.straden.ca/about">
+  <meta property="og:image" content="https://www.straden.ca/assets/img/og-home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Straden: Get the leverage of AI. We handle the rest.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Straden">
+  <meta name="twitter:description" content="Straden&#x27;s mission now lives on the About page.">
+  <meta name="twitter:image" content="https://www.straden.ca/assets/img/og-home.png">
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta http-equiv="refresh" content="0; url=/about">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
-
-<nav class="site-nav" aria-label="Primary">
-  <div class="nav-inner">
-    <a class="logo" href="/" aria-label="Straden home"><span class="wordmark">STRADEN</span><span class="dot" aria-hidden="true"></span></a>
-    <button class="nav-toggle" type="button" aria-label="Open primary menu" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>Menu</button>
-    <div class="nav-links" id="primary-nav">
-      <a href="/mission" class="nav-link" aria-current="page">Mission</a>
-      <a href="/contact" class="nav-link">Contact</a>
-      <a href="/audit" class="btn btn-cta nav-primary-action">Find Your First Agent →</a>
+<body class="page-404">
+  <svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-turn" viewBox="0 0 24 24"><path d="M4 8h10a5 5 0 0 1 5 5v4m-4-4 4 4 4-4"/></symbol>
+    <symbol id="icon-branch" viewBox="0 0 24 24"><path d="M5 4v9a5 5 0 0 0 5 5h10M5 9h11a4 4 0 0 0 4-4M5 9v10"/><circle cx="5" cy="4" r="1.5"/><circle cx="20" cy="5" r="1.5"/><circle cx="20" cy="18" r="1.5"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6zM14 2v5h4M9 12h6M9 16h6"/></symbol>
+    <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="4" cy="5" r="2"/><circle cx="20" cy="19" r="2"/><path d="M6 5h9a4 4 0 0 1 0 8H9a3 3 0 0 0 0 6h9"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="shell nav-shell">
+      <a href="/" class="brand" aria-label="Straden home"><span class="brand-word">STRADEN</span><span class="brand-dot" aria-hidden="true"></span></a>
+      <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a href="/#system">What we build</a>
+        <a href="/#process">How it works</a>
+        <a href="/#real-work">Real work</a>
+        <a href="/about">About</a>
+        <a href="/#questions">Questions</a>
+      </nav>
+      <a class="nav-audit" href="/audit" data-track="mini_audit_click" data-track-location="header"><span class="nav-free">Free</span>3-min Mini Audit</a><a class="nav-cta nav-start" href="https://calendar.app.google/kBcDhYi7tCNre9oV9" target="_blank" rel="noopener" data-track="book_call_click" data-track-location="header">Book a call <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+      <button type="button" class="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
     </div>
-  </div>
-</nav>
+  </header>
 
-<main id="main-content" tabindex="-1">
-<section class="hero">
-  <div class="max-w">
-    <h1>AI should give people leverage, not replace them.</h1>
-  </div>
-</section>
-
-<article>
-  <div class="max-w">
-    <p class="lede">Straden exists to move routine coordination out of people's way so they can spend more time on judgment, relationships, and growth.</p>
-
-    <h2>Two very different businesses. The same operational problem.</h2>
-
-    <p>That belief came from more than ten years of seeing the same problem from two very different sides.</p>
-
-    <p>For over a decade, Jamal Muckett-Sobers worked inside a growing Canadian university. He began by supporting executives responsible for growth and external relations, moved into campus operations, and eventually led capital projects and facilities.</p>
-
-    <p>The roles changed, but the work kept returning to the same challenge: keeping plans, projects, stakeholders, and cross-functional teams aligned. That included campus and capital planning behind more than $15 million in projects.</p>
-
-    <p>At the same time, he was building Level Up Desks, an e-commerce business he still runs today. There was no department to coordinate. Jamal handled sourcing, pricing, marketing, fulfilment, and bookkeeping, then built practical automations so the business did not depend on every task being completed by hand.</p>
-
-    <p>The businesses were different, but the operational problem was the same: too much work depended on one person holding everything together.</p>
-
-    <h2>What operational drag feels like from the inside.</h2>
-
-    <p>Tasks stall between departments, and no one notices until the delay costs time or money. Context and approvals fail to reach the next person. Documents wait to be drafted. Deadlines pass. Information exists somewhere, but no one can find it when they need it.</p>
-
-    <p>As the volume grows, tactical work takes over the day. The team has less time to decide what matters, solve harder problems, or move the business forward.</p>
-
-    <h2>The real risk is what only lives in people's heads.</h2>
-
-    <p>The process, its history, and its exceptions often live only in someone's memory. When that person is busy or away, the work slows down and important context can disappear.</p>
-
-    <p>The cost is more than mistakes. Organizations can spend so much time gathering information and chasing status that they have little capacity left to execute the plans meant to move them forward.</p>
-
-    <div class="statement">
-      <p>Disconnected operations reduce productivity, slow execution, and create unnecessary work for everyone involved.</p>
-    </div>
-
-    <h2>Build leverage around people, not instead of them.</h2>
-
-    <p>Straden was built to give businesses the operating support they are missing. The system retains context, moves routine work forward, and brings decisions back to people when their judgment matters.</p>
-
-    <p>Because it is built around the business's real workflows, the system can improve as its rules, exceptions, and operating context become clearer.</p>
-
-    <h2>What Straden believes.</h2>
-
-    <div class="triad">
-      <div class="triad-item"><div><b>People should keep the judgment.</b><p>Agents should handle repeatable coordination so people can focus on decisions, relationships, and strategy.</p></div></div>
-      <div class="triad-item"><div><b>Operational leverage should be practical.</b><p>It should work with the tools and team a business already has, not require another platform to manage.</p></div></div>
-      <div class="triad-item"><div><b>Growth should return time, not consume more of it.</b><p>A stronger operation should create room for valuable work and for life outside the business.</p></div></div>
-    </div>
-
-    <div class="close-cta">
-      <p>If that sounds like the kind of system your business needs, the free Mini Audit is the fastest way to see where to start.</p>
-      <a href="/audit" class="btn btn-cta">Find Your First Agent →</a>
-    </div>
-  </div>
-</article>
-
-</main>
-<footer class="site-footer">
-  <div class="max-w footer-top">
-    <div class="footer-brand">
-      <a class="logo" href="/" aria-label="Straden home"><span class="wordmark">STRADEN</span><span class="dot" aria-hidden="true"></span></a>
-      <p class="footer-tag">An operated agent system for service businesses with work stuck between people and tools.</p>
-      <a href="/audit" class="btn btn-cta footer-primary-action">Find Your First Agent →</a>
-    </div>
-    <div class="footer-col">
-      <h5>Explore</h5>
-      <ul class="footer-links">
-        <li><a href="/mission">Mission</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Get started</h5>
-      <ul class="footer-links">
-        <li><a href="/audit">Find Your First Agent</a></li>
-        <li><a href="https://calendar.app.google/kBcDhYi7tCNre9oV9">Book an Intro Call</a></li>
-        <li><a href="/privacy">Privacy Policy</a></li>
-        <li><a href="/terms">Terms of Use</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Straden.</span>
-    <span>Built for owner-operated service businesses.</span>
-  </div>
-</footer>
-
+  <main id="main">
+    <section class="page-hero page-hero-tall">
+      <div class="shell page-hero-inner">
+        <h1>This page has moved.</h1>
+        <p class="page-hero-sub">Straden's mission now lives on the <a href="/about">About page</a>.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-main"><div><a href="/" class="brand" aria-label="Straden home"><span class="brand-word">STRADEN</span><span class="brand-dot" aria-hidden="true"></span></a><p>Leverage, built. Productivity, gained.</p></div><div class="footer-nav"><a href="/#system">What we build</a><a href="/#real-work">Real work</a><a href="/about">About</a><a href="/audit">Mini Audit</a><a href="/contact">Contact</a><a href="/integration">Integration</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div><div class="shell footer-bottom"><span>© Straden</span><span>You get the leverage and productivity from AI. We handle the rest.</span></div></footer>
+  <script src="assets/js/analytics.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
