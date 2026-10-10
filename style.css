@@ -4815,3 +4815,15 @@ body.page-404 {
   text-underline-offset: 4px;
   cursor: pointer;
 }
+
+/* Jamal, 10 Oct: the About page's sections take the site spacing (128 / 104 / 84). Last in the file so it wins over
+   the About page's own earlier padding. */
+@media (min-width:1025px) {
+  .about-story, .about-beliefs, .about-how, .about-work { padding-top: 128px; padding-bottom: 128px; }
+}
+@media (min-width:641px) and (max-width:1024px) {
+  .about-story, .about-beliefs, .about-how, .about-work { padding-top: 104px; padding-bottom: 104px; }
+}
+@media (max-width:640px) {
+  .about-story, .about-beliefs, .about-how, .about-work { padding-top: 84px; padding-bottom: 84px; }
+}
