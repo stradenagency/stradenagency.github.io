@@ -1,4 +1,4 @@
-Source: Straden working repository, commit e7b66d7c
+Source: Straden working repository, commit 1865d1d1
 Target: pages
 
 .nojekyll

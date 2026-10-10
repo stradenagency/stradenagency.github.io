@@ -57,7 +57,7 @@ function openPreparedEmail(data, unsaved) {
   document.getElementById('formStatus').textContent = unsaved
     ? 'We could not send the form, so a prepared email is opening instead. If nothing happens, use the direct email link above.'
     : 'Opening your email application. If nothing happens, use the direct email link above.';
-  window.location.href = `mailto:straden.agency@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = `mailto:hello@straden.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 function firstProblem(data) {
@@ -98,7 +98,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
   if (outcome.saved) {
     contactSaved = true;
     trackContact('saved');
-    status.textContent = 'Thank you. Your message has been sent to Straden.';
+    status.textContent = 'Thank you. Your message is with Straden, and a person will reply.';
     button.textContent = 'Sent';
     return;
   }
