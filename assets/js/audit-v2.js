@@ -496,14 +496,21 @@ function renderResults() {
 
     <section class="res-next">
       <div><h3>Want this agent built and running?</h3><p>Book a call. We'll look at your answers together and tell you plainly whether the Operational Leverage Audit is worth doing.</p></div>
-      <div class="res-next-actions"><a class="btn btn-cta result-cta" id="resultBookCall" href="${e(bookingUrl())}" target="_blank" rel="noopener" onclick="track('audit_book_call_click', { tier: computeResult().lead.tier })">Book a call</a><button type="button" class="results-secondary-link" onclick="restartAudit()">Retake the Mini Audit</button></div>
+      <div class="res-next-actions"><a class="btn btn-cta result-cta" id="resultBookCall" href="${e(bookingUrl())}" onclick="track('audit_book_call_click', { tier: computeResult().lead.tier })">Book a call</a><button type="button" class="results-secondary-link" onclick="restartAudit()">Retake the Mini Audit</button></div>
     </section>
   </div>`;
 }
 
-// The booking link carries the lead's booking key once the lead is saved, so a booked call lands on this lead.
+// Same-tab handoff keeps the saved opaque lead key/source on this origin, out of tag/page URLs.
 function bookingUrl() {
-  return window.StradenLeads ? window.StradenLeads.withBookingKey(AUDIT_V2.introCallUrl, gate.bookingKey) : AUDIT_V2.introCallUrl;
+  try {
+    if (typeof gate.bookingKey === "string" && /^bk_[a-z2-7]{32}$/.test(gate.bookingKey)) {
+      sessionStorage.setItem("stradenBookingContextV1", JSON.stringify({
+        bookingKey: gate.bookingKey, source: window.StradenLeads ? window.StradenLeads.attribution() : {}
+      }));
+    } else sessionStorage.removeItem("stradenBookingContextV1");
+  } catch (error) { /* Booking remains available without inventing correlation when storage fails. */ }
+  return "/booking";
 }
 
 // The assessment "writes in" after a short pause. It is the writeAssessment() template (Jamal, 9 Oct: templates
@@ -522,6 +529,7 @@ function restartAudit() {
   track("audit_restart");
   lastScreen = "";
   Object.assign(gate, { unlocked: false, form: null, bookingKey: null, emailQueued: false });
+  try { sessionStorage.removeItem("stradenBookingContextV1"); } catch (error) { /* unavailable */ }
   Object.assign(state, { step: 0, firstName: "", businessType: "", teamSize: null, messiestArea: null, statusChasing: null, stuckHandoffs: null, informalCoordination: null, ownerDependence: null, hoursLost: null, hourlyCost: "", consequence: null, urgency: null, workflows: "" });
   render();
 }
@@ -605,6 +613,7 @@ function submitGate(event) {
 // (LEAD-EVENT-CONTRACT.md §4).
 async function saveLead(result) {
   if (!window.StradenLeads || !gate.form) return;
+  const bookingSubmission = gate.form.submissionId;
   const trap = document.getElementById("gateWebsite");
   const outcome = await window.StradenLeads.submit(gate.form, {
     source: "mini_audit",
@@ -615,6 +624,8 @@ async function saveLead(result) {
     },
     website: trap ? trap.value : ""
   });
+  // An older request must not attach its lead after the visitor restarts the audit.
+  if (!gate.form || gate.form.submissionId !== bookingSubmission) return;
   track("audit_lead_saved", { saved: outcome.saved, tier: result.lead.tier });
   if (!outcome.saved) return;
   gate.bookingKey = outcome.bookingKey;

@@ -5,11 +5,12 @@
 (() => {
   const CONFIG = {
     ga4: "G-ZTN62C8F6N",  // Google Analytics 4 measurement ID (property created by Jamal, 2026-10-10)
-    metaPixel: ""         // Meta pixel ID, e.g. "123456789012345" (from the Meta setup on 10-13, HQ 652.7)
+    metaPixel: "28937196299225819" // Correct Straden dataset read back15Oct; consent still required.
   };
   if (!CONFIG.ga4 && !CONFIG.metaPixel) return;
 
-  const KEY = "stradenConsentV1";
+  // New purpose includes confirmed bookings; earlier page-measurement consent is not reused.
+  const KEY = "stradenConsentV2";
   const EVENTS = ["book_call_click", "mini_audit_click", "audit_view", "audit_start", "audit_step", "audit_gate_view", "audit_lead",
                   "audit_result_view", "audit_lead_saved", "audit_book_call_click", "audit_restart", "contact_form_send"];
   // Meta's standard events where one fits; the rest go as custom events under their own names.
@@ -30,6 +31,7 @@
   }
 
   function send(detail) {
+    if (stored() !== "granted") return;
     if (!detail || EVENTS.indexOf(detail.event) === -1) return;
     const params = Object.assign({}, detail);
     delete params.event;
@@ -63,13 +65,33 @@
     window.addEventListener("straden:track", event => send(event.detail));
   }
 
+  window.StradenMeasurement = {
+    accepted: () => stored() === "granted",
+    confirmedBooking(uid) {
+      if (stored() !== "granted" || !CONFIG.metaPixel || !window.fbq ||
+          typeof uid !== "string" || !/^[A-Za-z0-9_-]{1,128}$/.test(uid)) return false;
+      // No callback payload, lead key, attendee details or Google fields enter measurement.
+      window.fbq("track", "Schedule", {}, { eventID: `cal:${uid}:confirmed` });
+      return true; // queued in browser; this is NOT a Meta receipt
+    },
+    withdraw() {
+      remember("denied");
+      if (CONFIG.ga4) window[`ga-disable-${CONFIG.ga4}`] = true;
+      if (window.fbq) window.fbq("consent", "revoke");
+      if (window.gtag) window.gtag("consent", "update", { analytics_storage: "denied", ad_storage: "denied" });
+    }
+  };
+  window.addEventListener("storage", event => {
+    if (event.key === KEY && event.newValue !== "granted") window.StradenMeasurement.withdraw();
+  });
+
   function notice() {
     const box = document.createElement("div");
     box.className = "cookie-notice";
     box.setAttribute("role", "region");
     box.setAttribute("aria-label", "Cookie notice");
     // Proposed wording, pending Jamal's approval (tracking/PRIVACY-REVIEW.md).
-    box.innerHTML = '<p>We use cookies to see which pages and ads bring people to Straden, so we can improve them. ' +
+    box.innerHTML = '<p>We use cookies to measure pages, ads and confirmed call bookings, so we can improve them. ' +
       'They are off unless you accept. <a href="/privacy">Privacy Policy</a></p>' +
       '<div class="cookie-actions"><button type="button" class="button button-primary cookie-accept">Accept</button>' +
       '<button type="button" class="cookie-decline">Decline</button></div>';

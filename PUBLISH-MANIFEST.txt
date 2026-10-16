@@ -1,4 +1,4 @@
-Source: Straden working repository, commit b3791766
+Source: Straden working repository, commit 5001ace3
 Target: pages
 
 .nojekyll
@@ -19,6 +19,8 @@ assets/img/og-home.png
 assets/img/og.jpg
 assets/js/analytics.js
 assets/js/audit-v2.js
+assets/js/booking-config.js
+assets/js/cal-booking.js
 assets/js/contact.js
 assets/js/lead-client.js
 assets/js/nav.js
@@ -42,6 +44,7 @@ assets/tools/runner/whatsapp.svg
 assets/tools/runner/workiz.svg
 assets/tools/runner/xero.svg
 audit.html
+booking.html
 contact.html
 index.html
 integration.html

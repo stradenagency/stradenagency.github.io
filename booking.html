@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex"><meta name="referrer" content="no-referrer">
+  <title>Book your intro call — Straden</title>
+  <link rel="canonical" href="https://www.straden.ca/booking">
+  <script>if(location.search || location.hash) history.replaceState(null,"",location.pathname);</script>
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+  <style>main.booking-shell{width:min(100% - 34px,1100px);margin:64px auto;min-height:70vh}.booking-shell h1{max-width:800px}.booking-shell p{max-width:720px;margin:24px 0}#cal-booking{width:100%;min-height:700px;margin:32px 0}.booking-shell :focus-visible{outline:3px solid #B8532A;outline-offset:5px}[hidden]{display:none!important}@media(max-width:640px){main.booking-shell{margin:32px auto}#cal-booking{min-height:780px}}</style>
+  <script defer src="/assets/js/analytics.js"></script><script defer src="/assets/js/booking-config.js"></script><script defer src="/assets/js/cal-booking.js"></script>
+</head>
+<body>
+  <main class="booking-shell">
+    <a href="/audit">← Back to the Mini Audit</a>
+    <section id="bookingIntro" aria-labelledby="bookingHeading">
+      <h1 id="bookingHeading">Book your 30-minute intro call.</h1>
+      <p>We'll look at the problem from your Mini Audit and whether Straden can help.</p>
+      <p>Cal.com handles scheduling. Google Calendar checks availability and receives the appointment. Booking works whether you accept or decline measurement cookies. <a href="/privacy">Privacy Policy</a></p>
+      <p id="bookingStatus" role="status">The new booking calendar is being prepared. Please email <a href="mailto:hello@straden.ca">hello@straden.ca</a> to arrange a call.</p>
+    </section>
+    <div id="cal-booking" aria-label="Intro call calendar" hidden></div>
+    <section id="bookingThanks" aria-labelledby="bookingThanksHeading" hidden>
+      <h2 id="bookingThanksHeading" tabindex="-1">Your call is booked.</h2>
+      <p>Keep your Mini Audit result handy for the conversation. Your booking confirmation contains the appointment details and options to change or cancel.</p>
+    </section>
+    <button class="cookie-decline" type="button" onclick="window.StradenMeasurement?.withdraw();this.textContent='Measurement cookies declined'">Decline measurement cookies</button>
+  </main>
+  <footer class="funnel-footer"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a></footer>
+</body>
+</html>
