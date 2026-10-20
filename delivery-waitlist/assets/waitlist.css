@@ -1,0 +1,63 @@
+/* Shared, restrained signup UI. Headlines and product scenes stay unchanged. */
+#straden-layout-direction button.sl-nav-cta{background:none;border:0;border-bottom:1px solid #607587;border-radius:0;cursor:pointer;min-height:44px}
+#straden-layout-direction .sw-capture{display:flex;align-items:stretch;gap:8px;width:min(100%,450px);margin:0}
+#straden-layout-direction .sw-capture input{font:400 16px Inter,Arial,sans-serif;min-width:0;width:100%;border:1px solid #607587;border-radius:7px;background:#fff;color:#112331;padding:13px 14px;min-height:48px}
+#straden-layout-direction .sw-capture button{flex:none;background:#b8532a;color:white;font:500 14px Inter,Arial,sans-serif;border:0;border-radius:7px;padding:12px 17px;min-height:48px}
+#straden-layout-direction .sl-hero-actions{flex-wrap:wrap;flex-direction:column;align-items:center;gap:16px}
+#straden-layout-direction .sl-hero-actions .sw-capture{flex:none;width:min(100%,450px)}
+#straden-layout-direction .sw-capture-wrap{width:min(100%,450px);min-width:0}
+#straden-layout-direction .sl-close .sw-capture-wrap{margin:24px auto 0}
+#straden-layout-direction .sl-close .sw-capture-wrap .sw-capture{margin:0}
+#straden-layout-direction .sw-scroll .sw-capture-wrap{flex:1}
+#straden-layout-direction .sl-close .sw-capture{margin:24px auto 0}
+#straden-layout-direction .sl-close .sw-capture+p{margin-top:16px}
+#straden-layout-direction .sw-scroll{position:fixed;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;justify-content:center;gap:26px;background:#0b2232;color:#f5f0eb;border:1px solid #395361;border-radius:12px;padding:12px 18px;width:min(690px,calc(100% - 32px));box-shadow:0 8px 28px #071a292e}
+#straden-layout-direction .sw-scroll>span{font-size:14px;line-height:1.6;white-space:nowrap}
+#straden-layout-direction .sw-scroll .sw-capture{flex:1}
+#straden-layout-direction .sw-scroll[hidden],#sw-success[hidden]{display:none}
+#straden-layout-direction .sw-sr{position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap}
+#sl-waitlist-dialog{font:400 14px/1.6 Inter,Arial,sans-serif;color:#112331;background:#f5f0eb;border:0;border-radius:14px;width:min(560px,calc(100% - 32px));max-width:none;max-height:calc(100dvh - 40px);padding:34px;box-sizing:border-box;overflow:auto;overscroll-behavior:contain;box-shadow:0 24px 90px #071a2940}
+#sl-waitlist-dialog::backdrop{background:#071a29b8}
+#sl-waitlist-dialog *{box-sizing:border-box}
+#sl-waitlist-dialog .sw-close{position:absolute;right:12px;top:9px;background:transparent;border:0;color:#495f66;width:44px;height:44px;font-size:30px;line-height:1;cursor:pointer}
+#sl-waitlist-dialog .sw-heading{padding-right:18px}
+#sl-waitlist-dialog .sw-eyebrow{font-size:14px;letter-spacing:.1em;font-weight:600;color:#b8532a}
+#sl-waitlist-dialog h2,#sl-waitlist-dialog h3{font:600 29px/1.2 'Plus Jakarta Sans',Arial,sans-serif;letter-spacing:-.03em;margin:10px 0 12px;text-wrap:balance}
+#sl-waitlist-dialog p{margin:0 0 20px;color:#495f66}
+#sl-waitlist-dialog .sw-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;margin-top:24px}
+#sl-waitlist-dialog .sw-full{grid-column:1/-1}
+#sl-waitlist-dialog label{font-size:14px;font-weight:500;display:block;margin-bottom:6px}
+#sl-waitlist-dialog label span,#sl-waitlist-dialog small{font-weight:400;color:#495f66}
+#sl-waitlist-dialog .sw-required{color:#b42318;font-weight:600}
+#sl-waitlist-dialog .sw-required-note{font-size:14px;margin:16px 0 -12px}
+#sl-waitlist-dialog input:not([type=checkbox]),#sl-waitlist-dialog select{font:400 16px Inter,Arial,sans-serif;display:block;width:100%;min-height:46px;padding:11px 12px;border:1px solid #879ba5;background:#fff;color:#112331;border-radius:6px}
+#sl-waitlist-dialog small{display:block;font-size:14px;line-height:1.5;margin-top:6px}
+#sl-waitlist-dialog .sw-consent{display:flex;gap:10px;align-items:flex-start;margin:24px 0 0;font-weight:400;font-size:14px;line-height:1.65;cursor:pointer}
+#sl-waitlist-dialog .sw-consent input{flex:none;width:18px;height:18px;margin:2px 0;accent-color:#1b3a5c}
+#sl-waitlist-dialog .sw-policy{font-size:14px;line-height:1.7;margin:12px 0 0}
+#sl-waitlist-dialog a{color:#1b3a5c;text-decoration:underline;text-underline-offset:3px}
+#sl-waitlist-dialog .sw-submit{font:500 14px Inter,Arial,sans-serif;display:flex;align-items:center;justify-content:center;gap:18px;width:100%;min-height:48px;margin-top:18px;border:0;border-radius:7px;background:#b8532a;color:#fff;cursor:pointer}
+#sl-waitlist-dialog .sw-submit:disabled{opacity:.65;cursor:wait}
+#sl-waitlist-dialog .sw-fine{font-size:14px;text-align:center;margin:10px 0 0}
+#sl-waitlist-dialog .sw-error{display:block;color:#9a3024;font-size:14px;line-height:1.5;margin-top:5px}
+#sl-waitlist-dialog [hidden]{display:none}
+#sl-waitlist-dialog [aria-invalid=true]{border-color:#9a3024}
+#sl-waitlist-dialog #sw-status{font-size:14px;color:#9a3024;margin:14px 0 0}
+#sl-waitlist-dialog .sw-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+#sl-waitlist-dialog #sw-success{text-align:center;padding:16px 0 0}
+#sl-waitlist-dialog .sw-check{width:46px;height:46px;border-radius:50%;background:#d4e3ee;color:#1b3a5c;display:grid;place-items:center;font-size:24px;margin:0 auto 20px}
+#sl-waitlist-dialog .sw-success-detail{font-size:14px}
+@media(max-width:560px){#sl-waitlist-dialog{padding:28px 22px;max-height:calc(100dvh - 24px)}#sl-waitlist-dialog h2{font-size:25px}#sl-waitlist-dialog .sw-fields{grid-template-columns:1fr;gap:12px}#straden-layout-direction .sl-hero-actions{gap:18px}#straden-layout-direction .sw-capture{gap:6px}#straden-layout-direction .sw-capture button{font-size:14px;padding:12px}#straden-layout-direction .sw-scroll{padding:10px;gap:0;bottom:max(10px,env(safe-area-inset-bottom));width:calc(100% - 20px)}#straden-layout-direction .sw-scroll>span{display:none}}
+
+/* Compact, dismissible capture leaves more of the work visible. */
+#straden-layout-direction .sw-scroll{left:auto;right:16px;transform:none;width:min(520px,calc(100% - 32px));gap:6px;padding:8px}
+#straden-layout-direction .sw-scroll .sw-capture-wrap{width:auto;min-width:0}
+#straden-layout-direction .sw-scroll input,#straden-layout-direction .sw-scroll .sw-capture button{min-height:44px;padding:10px 12px}
+#straden-layout-direction .sw-dismiss{flex:none;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:6px;background:none;color:#f5f0eb;font-size:24px}
+#straden-layout-direction .sw-dismiss:hover{background:#1b3a5c}
+#straden-layout-direction .sw-short-label{display:none}
+@media(max-width:560px){
+ #straden-layout-direction .sw-scroll{right:10px;width:calc(100% - 20px)}
+ #straden-layout-direction .sw-full-label{display:none}
+ #straden-layout-direction .sw-short-label{display:inline}
+}

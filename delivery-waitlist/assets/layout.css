@@ -1,0 +1,224 @@
+@font-face{font-family:Inter;src:url('/delivery-waitlist/assets/fonts/inter-latin.woff2') format('woff2');font-weight:100 900;font-display:swap}@font-face{font-family:'Plus Jakarta Sans';src:url('/delivery-waitlist/assets/fonts/plus-jakarta-sans-latin.woff2') format('woff2');font-weight:200 800;font-display:swap}html,body{margin:0;background:#f5f0eb}
+#straden-layout-direction{--sl-night:#071a29;--sl-navy:#1b3a5c;--sl-canvas:#f5f0eb;--sl-ink:#112331;--sl-body:#495f66;--sl-mist:#d4e3ee;--sl-ember:#b8532a;--sl-brand-ember:#e07a45;font-family:Inter,Arial,sans-serif;color:var(--sl-ink);width:100%}
+#straden-layout-direction *{box-sizing:border-box}
+#straden-layout-direction .sl-page{width:100%;background:var(--sl-canvas);container-type:inline-size;margin:auto}
+#straden-layout-direction h1,#straden-layout-direction h2,#straden-layout-direction h3,#straden-layout-direction p{margin:0}
+#straden-layout-direction h1,#straden-layout-direction h2{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-weight:600;letter-spacing:-.035em;text-wrap:balance}
+#straden-layout-direction button,#straden-layout-direction a{font:inherit;touch-action:manipulation}
+#straden-layout-direction a{text-decoration:none;color:inherit}
+#straden-layout-direction button{cursor:pointer}
+#straden-layout-direction .sl-nav{background:var(--sl-night);color:#f5f0eb;display:flex;align-items:center;justify-content:space-between;padding:22px 5%;gap:18px}
+#straden-layout-direction .sl-brand{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:17px;letter-spacing:.06em;font-weight:700;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;line-height:1}
+#straden-layout-direction .sl-brand-dot{width:7px;height:7px;flex:none;border-radius:50%;background:var(--sl-brand-ember);transform:translateY(-.5px)}
+#straden-layout-direction .sl-nav nav{display:flex;gap:13px}
+#straden-layout-direction .sl-nav nav button{font-size:14px;color:#b5c8d3;background:none;border:0;padding:8px 0;min-height:35px}
+#straden-layout-direction .sl-nav nav button[aria-pressed=true]{color:#fff;border-bottom:1px solid var(--sl-brand-ember)}
+#straden-layout-direction .sl-nav-cta{font-size:14px;color:#f5f0eb;border-bottom:1px solid #607587;padding:8px 0;white-space:nowrap}
+#straden-layout-direction .sl-hero{background:var(--sl-night);color:#fff;text-align:center;padding:53px 6% 76px}
+#straden-layout-direction .sl-agent-mark{font-size:39px;font-family:'Plus Jakarta Sans',Arial,sans-serif;font-weight:600;margin-bottom:25px;line-height:1;color:#f5f0eb}
+#straden-layout-direction .sl-agent-mark>.sl-brand{font-size:24px;line-height:1}.sl-agent-mark{display:flex;justify-content:center}
+#straden-layout-direction h1{font-size:43px;line-height:1.16;max-width:610px;margin:auto}
+#straden-layout-direction .sl-hero p{font-size:18px;line-height:1.8;color:#bbccd7;max-width:620px;margin:23px auto 0}
+#straden-layout-direction .sl-hero-actions{display:flex;justify-content:center;align-items:center;gap:24px;margin-top:29px}
+#straden-layout-direction .sl-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:25px;background:var(--sl-ember);color:#fff;border:0;border-radius:9px;font-size:14px;padding:14px 19px;min-height:44px;font-weight:600}
+#straden-layout-direction .sl-secondary{font-size:14px;color:#d4e3ee}
+#straden-layout-direction .sl-introduction{padding:64px 5% 62px;text-align:center}
+#straden-layout-direction h2{font-size:clamp(32px,2.6vw,40px);line-height:1.25}
+#straden-layout-direction .sl-introduction>p{font-size:18px;line-height:1.7;margin:14px auto 29px;color:var(--sl-body);max-width:410px}
+#straden-layout-direction .sl-introduction>p{margin-bottom:9px}
+#straden-layout-direction .sl-audience-fit{display:block;font-size:14px;line-height:1.8;color:var(--sl-body);margin:0 auto 27px;max-width:480px}
+#straden-layout-direction .sl-film{background:var(--sl-mist);border-radius:14px;overflow:hidden;text-align:left}
+#straden-layout-direction .sl-film-top{display:flex;align-items:center;justify-content:space-between;font-size:14px;padding:17px 20px;color:#3d5c6b}
+#straden-layout-direction .sl-film-top>span:first-child{letter-spacing:.05em;font-weight:600}
+#straden-layout-direction .sl-film-stage{position:relative;display:flex;justify-content:center;align-items:center;min-height:380px;padding:16px 15px 25px}
+#straden-layout-direction .sl-phone{width:226px;background:var(--sl-night);color:#fff;border-radius:28px;padding:18px 15px 13px;position:relative;z-index:2;box-shadow:0 25px 35px -25px #16314899}
+#straden-layout-direction .sl-phone-top{text-align:center;display:flex;flex-direction:column;gap:5px;align-items:center;margin-bottom:23px}
+#straden-layout-direction .sl-phone-notch{height:4px;width:37px;background:#60788b;border-radius:4px;margin-bottom:9px}
+#straden-layout-direction .sl-phone-top>.sl-brand{font-size:15px;gap:5px}
+#straden-layout-direction .sl-phone-top .sl-brand-dot{width:7px;height:7px}
+#straden-layout-direction .sl-phone-top>small{font-size:14px;color:#b0c4d2}
+#straden-layout-direction .sl-chat-question{margin-left:27px;font-size:14px;background:#2b485c;border-radius:10px 10px 0 10px;padding:10px 12px;margin-bottom:16px;color:#eff4f5}
+#straden-layout-direction .sl-chat-answer{font-size:14px;line-height:1.8;color:#d2e0e9;min-height:81px}
+#straden-layout-direction .sl-chat-work{display:flex;gap:8px;align-items:center;font-size:14px;padding-top:14px;color:#c0d7cc}
+#straden-layout-direction .sl-work-indicator{width:5px;height:5px;border-radius:50%;background:#b6d0c2;flex-shrink:0}
+#straden-layout-direction .sl-chat-review{color:#e8b99c;font-size:14px;line-height:1.7;padding:12px 0 16px}
+#straden-layout-direction .sl-chat-compose{border-top:1px solid #426075;color:#aec5d4;font-size:14px;padding-top:11px;display:flex;justify-content:space-between}
+#straden-layout-direction .sl-source{position:absolute;left:4%;top:48px;width:182px;background:#f8faf8;box-shadow:0 18px 32px -24px #17334677;border-radius:10px;padding:15px;transform:rotate(-4deg);z-index:1}
+#straden-layout-direction .sl-source-top{display:flex;align-items:center;gap:8px;margin-bottom:14px;color:#546c77;font-size:14px}
+#straden-layout-direction .sl-small-mark{display:inline-flex;width:28px;height:28px;padding:0;background:transparent;flex-shrink:0}
+#straden-layout-direction .sl-small-mark img{display:block;width:28px;height:28px}
+#straden-layout-direction .sl-source>strong{font-size:14px;line-height:1.5;display:block;color:var(--sl-ink)}
+#straden-layout-direction .sl-source>p{font-size:14px;line-height:1.7;margin-top:7px;color:#506773}
+#straden-layout-direction .sl-source-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:13px}
+#straden-layout-direction .sl-source-tags span{font-size:14px;background:#e3edf0;color:#435e6b;padding:3px 6px;border-radius:4px}
+#straden-layout-direction .sl-paper{position:absolute;right:3%;bottom:40px;width:180px;background:#fffaf5;box-shadow:0 18px 32px -24px #17334677;border-radius:5px;padding:19px 15px;transform:rotate(5deg);z-index:3}
+#straden-layout-direction .sl-paper-label{font-size:14px;color:#6c7776;letter-spacing:.04em;margin-bottom:12px}
+#straden-layout-direction .sl-paper>strong{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-weight:600;font-size:15px;line-height:1.4;display:block;margin-bottom:15px;color:var(--sl-ink)}
+#straden-layout-direction .sl-paper-line{height:3px;width:68%;background:#dce2dd;border-radius:2px;margin:7px 0}
+#straden-layout-direction .sl-paper-line.sl-long{width:94%}
+#straden-layout-direction .sl-paper-row{display:flex;justify-content:space-between;border-top:1px solid #dce2dd;padding-top:8px;margin-top:10px;font-size:14px;color:#5b716d}
+#straden-layout-direction .sl-paper-approval{margin-top:15px;background:#f5e4d9;color:#8b4120;font-size:14px;padding:7px 5px;text-align:center;border-radius:4px}
+#straden-layout-direction .sl-film-bottom{border-top:1px solid #abc1ce;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:14px;color:#3f5c6d}
+#straden-layout-direction .sl-film-bottom>span{max-width:65%;line-height:1.7}
+#straden-layout-direction .sl-film-bottom button{font-size:14px;background:transparent;border:0;border-bottom:1px solid #758f9d;color:#26485b;padding:7px 0;white-space:nowrap;min-height:34px}
+#straden-layout-direction .sl-stage-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;padding:5px 20px 20px}
+#straden-layout-direction .sl-stage-card{position:relative;background:#f7f8f4;color:var(--sl-ink);border:1px solid transparent;border-radius:9px;padding:12px;text-align:left;min-height:93px;display:flex;flex-direction:column;gap:5px;line-height:1.5;min-width:0}
+#straden-layout-direction .sl-stage-card>span{font-size:14px;color:#5c7280}
+#straden-layout-direction .sl-stage-card>strong{font-size:14px;font-weight:600}
+#straden-layout-direction .sl-stage-card>small{font-size:14px;color:#536c75;line-height:1.5}
+#straden-layout-direction .sl-stage-card[aria-pressed=true]{background:var(--sl-night);color:#fff;border-color:var(--sl-ember)}
+#straden-layout-direction .sl-stage-card[aria-pressed=true]>span{color:#e8b99c}
+#straden-layout-direction .sl-stage-card[aria-pressed=true]>small{color:#c1d4df}
+#straden-layout-direction .sl-film-stage .sl-stage-entry{animation:sl-stage-entry 320ms cubic-bezier(.23,1,.32,1)}
+@keyframes sl-stage-entry{from{opacity:.6;translate:0 10px}to{opacity:1;translate:0 0}}
+#straden-layout-direction .sl-feature{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;padding:64px 5%}
+#straden-layout-direction .sl-feature-copy>p{font-size:18px;line-height:1.8;color:var(--sl-body);margin-top:17px;max-width:52ch}
+#straden-layout-direction .sl-four-parts{margin-top:24px}
+#straden-layout-direction .sl-four-parts button{display:flex;justify-content:space-between;align-items:center;gap:14px;width:100%;border:0;border-top:1px solid #c6cfc9;background:transparent;color:#546b72;font-size:14px;text-align:left;min-height:47px;padding:11px 0;line-height:1.6}
+#straden-layout-direction .sl-four-parts button>span:last-child{opacity:0;color:var(--sl-ember)}
+#straden-layout-direction .sl-four-parts button[aria-pressed=true]{color:var(--sl-ink);font-weight:600}
+#straden-layout-direction .sl-four-parts button[aria-pressed=true]>span:last-child{opacity:1}
+#straden-layout-direction .sl-capability{display:block}
+#straden-layout-direction .sl-capability strong{display:block;font-size:14px;font-weight:600;line-height:1.6}
+#straden-layout-direction .sl-capability small{display:block;font-size:14px;font-weight:400;line-height:1.7;color:var(--sl-body);margin-top:5px}
+#straden-layout-direction .sl-delivery{background:#e9eeeb}
+#straden-layout-direction .sl-work-scene{min-height:326px;background:var(--sl-night);border-radius:14px;color:#fff;position:relative;padding:21px 18px}
+#straden-layout-direction .sl-work-scene-head{display:flex;align-items:center;gap:9px;font-size:14px;color:#b7cddc}
+#straden-layout-direction .sl-work-scene-head .sl-small-mark{background:transparent}
+#straden-layout-direction .sl-task-stack{position:relative;margin:44px 0 34px;min-height:170px}
+#straden-layout-direction .sl-stack-back,#straden-layout-direction .sl-stack-middle{position:absolute;inset:-22px 23px 22px;background:#69808e;border-radius:8px}
+#straden-layout-direction .sl-stack-middle{inset:-11px 11px 11px;background:#9cabb0}
+#straden-layout-direction .sl-stack-front{position:relative;background:#f9f6f1;color:var(--sl-ink);border-radius:9px;padding:21px 18px;min-height:170px}
+#straden-layout-direction .sl-stack-front>span:first-child{font-size:14px;color:#61736e}
+#straden-layout-direction .sl-stack-front>strong{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:18px;font-weight:600;display:block;margin:9px 0}
+#straden-layout-direction .sl-stack-front>p{font-size:14px;line-height:1.7;color:#536a71;min-height:38px}
+#straden-layout-direction .sl-stack-state{font-size:14px;display:block;border-top:1px solid #d6dcd5;padding-top:11px;margin-top:14px;color:#8f4423}
+#straden-layout-direction .sl-scene-caption{font-size:14px;color:#abc3d3}
+#straden-layout-direction .sl-team{background:var(--sl-canvas)}
+#straden-layout-direction .sl-team>.sl-feature-copy{width:min(100%,420px);justify-self:center;text-align:left}
+#straden-layout-direction .sl-conversation-scene{background:var(--sl-mist);padding:24px 17px;border-radius:14px}
+#straden-layout-direction .sl-team-window{background:#fffdf9;border-radius:10px;padding:17px;color:var(--sl-ink);box-shadow:0 18px 27px -24px #12304499}
+#straden-layout-direction .sl-team-top{display:flex;gap:8px;align-items:center;font-size:14px}
+#straden-layout-direction .sl-team-top>strong{font-size:14px;font-weight:600}
+#straden-layout-direction .sl-team-top>span:last-child{font-size:14px;margin-left:auto;color:#5c727a}
+#straden-layout-direction .sl-team-brief{padding:12px;background:#eaf1ed;margin:17px 0;border-radius:7px}
+#straden-layout-direction .sl-team-brief>small{font-size:14px;display:block;color:#506d5c;margin-bottom:5px}
+#straden-layout-direction .sl-team-brief>strong{font-size:14px;font-weight:500;line-height:1.6;display:block}
+#straden-layout-direction .sl-team-question{font-size:14px;line-height:1.6;padding:9px 12px;background:#ebecea;margin-left:24px;border-radius:8px 8px 0 8px}
+#straden-layout-direction .sl-team-window>p{font-size:14px;line-height:1.8;color:#546b73;margin-top:15px}
+#straden-layout-direction .sl-doc-attachment{display:flex;align-items:center;gap:9px;padding:12px 0;margin-top:5px}
+#straden-layout-direction .sl-doc-symbol{font-size:22px;color:var(--sl-ember)}
+#straden-layout-direction .sl-doc-attachment strong{display:block;font-size:14px;font-weight:500}
+#straden-layout-direction .sl-doc-attachment>div>span{display:block;font-size:14px;color:#637b74;line-height:1.7}
+#straden-layout-direction .sl-team-compose{display:flex;justify-content:space-between;font-size:14px;border-top:1px solid #d6ded8;padding-top:11px;color:#72817c}
+#straden-layout-direction .sl-connected-note{font-size:14px;display:flex;gap:7px;justify-content:center;align-items:center;margin-top:18px;color:#355a6d}
+#straden-layout-direction .sl-connected-dot{width:5px;height:5px;background:var(--sl-ember);border-radius:50%}
+#straden-layout-direction .sl-copy-note{display:block;font-size:14px;line-height:1.8;color:#61767a;margin-top:21px}
+#straden-layout-direction .sl-owner{background:#e9eeeb}
+#straden-layout-direction .sl-owner-scene{padding:21px 15px;background:#fffdf9;border-radius:11px}
+#straden-layout-direction .sl-owner-title{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:24px;font-size:14px}
+#straden-layout-direction .sl-owner-title strong{font-weight:600}
+#straden-layout-direction .sl-owner-title>span{font-size:14px;color:#6b7973}
+#straden-layout-direction .sl-owner-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+#straden-layout-direction .sl-owner-columns>div>span{font-size:14px;display:block;padding-bottom:10px;color:#536d76}
+#straden-layout-direction .sl-mini-work{background:#eef0ed;border-radius:6px;padding:10px 8px;min-height:103px}
+#straden-layout-direction .sl-mini-work>strong{font-size:14px;font-weight:500;line-height:1.6;display:block}
+#straden-layout-direction .sl-mini-work>small{font-size:14px;line-height:1.6;display:block;color:#677b72;margin-top:8px}
+#straden-layout-direction .sl-owner-person{font-size:14px;color:#586d78;line-height:1.6;display:block;margin-top:10px}
+#straden-layout-direction .sl-mini-active{background:#e2eaf0}
+#straden-layout-direction .sl-owner-activity{border-top:1px solid #d4ded6;padding-top:15px;margin-top:21px;display:flex;align-items:center;gap:9px;font-size:14px;line-height:1.7;color:#5d7376}
+#straden-layout-direction .sl-setup{padding:57px 7%;text-align:center}
+#straden-layout-direction .sl-setup h2{font-size:clamp(32px,2.6vw,40px)}
+#straden-layout-direction .sl-setup p{font-size:18px;color:var(--sl-body);margin-top:13px;line-height:1.8}
+#straden-layout-direction .sl-setup p{max-width:530px;margin-inline:auto}
+#straden-layout-direction .sl-connections{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin:25px 0 22px}
+#straden-layout-direction .sl-connections span{font-size:14px;padding:8px 11px;background:#e4e9e6;border-radius:6px;color:#435e6a}
+#straden-layout-direction .sl-setup-steps{font-size:14px;color:var(--sl-body);display:flex;justify-content:center;gap:13px;flex-wrap:wrap}
+#straden-layout-direction .sl-close{background:var(--sl-night);color:#fff;text-align:center;padding:61px 7%}
+#straden-layout-direction .sl-close>p{font-size:18px;color:#b9cedb;margin:17px 0 23px}
+#straden-layout-direction .sl-close>p{max-width:620px;margin-inline:auto;line-height:1.8}
+#straden-layout-direction .sl-close>.sl-wait-expectation{font-size:14px;max-width:420px;margin-top:19px;margin-bottom:0}
+#straden-layout-direction .sl-close button:disabled{cursor:default;opacity:1}
+#straden-layout-direction .sl-close>small{display:block;font-size:14px;color:#a6bfce;margin-top:20px;line-height:1.8}
+#straden-layout-direction .sl-footer{background:#0b2232;display:flex;justify-content:space-between;align-items:center;gap:24px;color:#c2d4e0;padding:24px 5%}
+#straden-layout-direction .sl-footer>span:last-child{font-size:14px;color:#b3c5d2}
+#straden-layout-direction .sl-tour-paused .sl-stage-entry{animation-play-state:paused}
+#straden-layout-direction .sl-stack-front.sl-reveal{animation:sl-reveal 300ms cubic-bezier(.23,1,.32,1)}
+@keyframes sl-reveal{from{transform:translateY(8px);opacity:.6}to{transform:translateY(0);opacity:1}}
+@container (max-width:560px){
+  #straden-layout-direction .sl-nav{flex-wrap:wrap;justify-content:space-between;gap:10px;padding:19px 6% 0}
+  #straden-layout-direction .sl-nav nav{order:3;justify-content:center;width:100%;gap:24px}
+  #straden-layout-direction .sl-nav nav button{font-size:14px;min-height:41px}
+  #straden-layout-direction .sl-hero{padding:43px 7% 56px}
+  #straden-layout-direction h1{font-size:33px;line-height:1.18}
+  #straden-layout-direction .sl-hero p{font-size:16px}
+  #straden-layout-direction .sl-hero-actions{gap:19px;flex-wrap:wrap}
+  #straden-layout-direction .sl-agent-mark{margin-bottom:22px;font-size:34px}
+  #straden-layout-direction h2{font-size:30px}
+  #straden-layout-direction .sl-introduction{padding:45px 5%}
+  #straden-layout-direction .sl-introduction>p{font-size:14px}
+  #straden-layout-direction .sl-film-stage{min-height:0;padding:10px 12px 24px;flex-direction:column;gap:16px}
+  #straden-layout-direction .sl-source{display:none}
+  #straden-layout-direction .sl-phone{width:230px}
+  #straden-layout-direction .sl-paper{position:relative;right:auto;bottom:auto;width:230px;padding:17px;transform:none}
+  #straden-layout-direction .sl-paper>strong{font-size:14px}
+  #straden-layout-direction .sl-paper-label{font-size:14px}
+  #straden-layout-direction .sl-paper-row{font-size:14px}
+  #straden-layout-direction .sl-paper-line{margin:5px 0}
+  #straden-layout-direction .sl-paper-approval{font-size:14px;padding:6px 3px}
+  #straden-layout-direction .sl-film-bottom{flex-direction:column;gap:6px;align-items:start;padding:12px 16px}
+  #straden-layout-direction .sl-film-bottom>span{max-width:none}
+  #straden-layout-direction .sl-film-bottom button{font-size:14px;min-height:40px}
+  #straden-layout-direction .sl-stage-cards{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 14px 16px;gap:8px}
+  #straden-layout-direction .sl-stage-card{min-height:99px;padding:11px}
+  #straden-layout-direction .sl-feature{grid-template-columns:1fr;gap:27px;padding:45px 6%}
+  #straden-layout-direction .sl-feature-copy>p{max-width:none;font-size:16px}
+  #straden-layout-direction .sl-work-scene{min-height:316px}
+  #straden-layout-direction .sl-four-parts button{font-size:14px;min-height:48px}
+  #straden-layout-direction .sl-team>.sl-feature-copy{order:-1;width:100%;justify-self:stretch}
+  #straden-layout-direction .sl-copy-note{font-size:14px}
+  #straden-layout-direction .sl-team-window{padding:20px}
+  #straden-layout-direction .sl-team-window>p{font-size:14px}
+  #straden-layout-direction .sl-team-question,#straden-layout-direction .sl-team-brief>strong{font-size:14px}
+  #straden-layout-direction .sl-team-brief>small,#straden-layout-direction .sl-team-top>strong,#straden-layout-direction .sl-team-top>span:last-child{font-size:14px}
+  #straden-layout-direction .sl-team-compose,#straden-layout-direction .sl-connected-note{font-size:14px}
+  #straden-layout-direction .sl-doc-attachment strong,#straden-layout-direction .sl-doc-attachment>div>span{font-size:14px}
+  #straden-layout-direction .sl-mini-work>strong,#straden-layout-direction .sl-mini-work>small,#straden-layout-direction .sl-owner-person{font-size:14px}
+  #straden-layout-direction .sl-owner-columns{gap:6px}
+  #straden-layout-direction .sl-owner-columns>div>span{font-size:14px}
+  #straden-layout-direction .sl-owner-activity{font-size:14px}
+  #straden-layout-direction .sl-footer{flex-wrap:wrap;gap:12px}
+}
+@media(pointer:coarse){#straden-layout-direction button{min-height:44px}}
+@media(prefers-reduced-motion:reduce){#straden-layout-direction *{animation:none!important;transition:none!important}}
+
+#straden-layout-direction .sl-niche{color:#d4e3ee;font-size:14px;font-weight:500;line-height:1.7;max-width:620px;margin:0 auto 17px;text-wrap:balance}
+#straden-layout-direction .sl-audience-fit{font-size:14px;max-width:660px;padding:0 12px}
+#straden-layout-direction .sl-footer nav{display:flex;flex-wrap:wrap;gap:8px 24px}
+#straden-layout-direction .sl-footer nav a{font-size:14px;display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:4px}
+#straden-layout-direction .sl-footer small{font-size:14px;color:#b3c5d2}
+#straden-layout-direction .sl-close .sl-policy-note{font-size:14px;line-height:1.8;margin:16px auto 0}
+#straden-layout-direction .sl-policy-note a{text-decoration:underline;text-underline-offset:3px}
+
+/* Readable content stays balanced on wide displays. */
+#straden-layout-direction .sl-feature{padding-inline:max(5%,calc((100% - 1280px)/2))}
+#straden-layout-direction .sl-film{max-width:1280px;margin-inline:auto}
+#straden-layout-direction .sl-team>.sl-feature-copy{width:min(100%,480px)}
+@container(max-width:560px){
+ #straden-layout-direction .sl-feature{padding-inline:6%}
+ #straden-layout-direction .sl-setup p,#straden-layout-direction .sl-close>p,#straden-layout-direction .sl-introduction>p{font-size:16px}
+ #straden-layout-direction .sl-team>.sl-feature-copy{width:100%}
+}
+
+#straden-layout-direction .sl-nav nav a{font-size:11px;color:#b5c8d3;padding:8px 0;min-height:44px;display:inline-flex;align-items:center}
+#straden-layout-direction .sl-nav nav a[aria-current=page]{color:white;border-bottom:1px solid #e07a45}
+#straden-layout-direction .sl-legal{max-width:840px;margin:auto;padding:56px 6% 80px;min-height:70vh}
+#straden-layout-direction .sl-legal h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:32px 0 16px}
+#straden-layout-direction .sl-legal h2{font-size:22px;line-height:1.4;margin:32px 0 10px}
+#straden-layout-direction .sl-legal p{font-size:16px;line-height:1.85;margin:0 0 16px;color:#495f66}
+#straden-layout-direction .sl-legal a{overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:4px}
+#straden-layout-direction .sl-legal .sl-legal-date{font-size:12px;margin-bottom:32px}
+#straden-layout-direction .sl-back{font-size:13px;display:inline-flex;align-items:center;min-height:44px;margin-right:20px}
+#straden-layout-direction .sl-legal .sl-contact-email{font-size:clamp(22px,5vw,32px);color:#1b3a5c}
+#straden-layout-direction .sl-no-script{padding:24px;font-size:14px}
+@container(max-width:560px){#straden-layout-direction .sl-nav nav a{min-height:44px}#straden-layout-direction .sl-legal{padding-top:24px}#straden-layout-direction .sl-footer nav{gap:8px 20px}}

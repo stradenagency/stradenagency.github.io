@@ -1,9 +1,12 @@
-Source: Straden working repository, commit 5001ace3
+Source: Straden working repository, commit 0fa74723
 Target: pages
+Unchanged base Pages commit: b5a296adcfc4ef93440253e0ba436923d0d4ff00
+Overlay: hq-652.39-public-waitlist
 
 .nojekyll
 404.html
 CNAME
+PUBLISH-MANIFEST.txt
 about.html
 assets/css/nav.css
 assets/css/responsive.css
@@ -46,13 +49,24 @@ assets/tools/runner/xero.svg
 audit.html
 booking.html
 contact.html
+delivery-waitlist/assets/favicon.svg
+delivery-waitlist/assets/fonts/inter-latin.woff2
+delivery-waitlist/assets/fonts/plus-jakarta-sans-latin.woff2
+delivery-waitlist/assets/layout.css
+delivery-waitlist/assets/waitlist.css
+delivery-waitlist/assets/waitlist.js
+delivery-waitlist/contact.html
+delivery-waitlist/privacy.html
+delivery-waitlist/terms.html
 index.html
 integration.html
 mission.html
 privacy.html
 robots.txt
 script.js
+service-trades.html
 sitemap.xml
+specialty-contractors-consultants.html
 style.css
 symtech-demo/index.html
 terms.html
