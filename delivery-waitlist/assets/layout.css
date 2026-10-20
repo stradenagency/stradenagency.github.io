@@ -210,6 +210,82 @@
  #straden-layout-direction .sl-team>.sl-feature-copy{width:100%}
 }
 
+/* Approved desktop web + mobile access render; confined to this workspace. */
+#straden-layout-direction .sl-access-availability{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:25px auto 0;color:#bbccd7;font-size:14px;line-height:1.7}
+#straden-layout-direction .sl-team .sdm-device-scene{--sdm-night:#071a29;--sdm-navy:#1b3a5c;--sdm-paper:#fffdf9;--sdm-ink:#112331;--sdm-muted:#495f66;--sdm-mist:#d4e3ee;--sdm-soft:#e9eeeb;--sdm-line:#d5dfdc;--sdm-ember:#b8532a;--sdm-brand:#e07a45;--sdm-phone-width:174px}
+#straden-layout-direction .sl-team .sdm-device-scene{position:relative;background:var(--sdm-mist);border-radius:14px;padding:22px 16px 18px;display:grid;grid-template-columns:minmax(0,1fr) var(--sdm-phone-width);align-items:center;gap:12px;min-width:0}
+#straden-layout-direction .sl-team .sdm-browser{background:var(--sdm-paper);border:1px solid #b7c8d0;border-radius:9px;overflow:hidden;min-width:0;box-shadow:0 14px 22px -18px #16314880}
+#straden-layout-direction .sl-team .sdm-browser-bar{display:flex;align-items:center;gap:10px;background:#eaf0f2;color:#536b77;padding:9px 10px;border-bottom:1px solid #cfdbdf;min-width:0;font-size:11px}
+#straden-layout-direction .sl-team .sdm-browser-dots{display:flex;gap:3px;flex:none}
+#straden-layout-direction .sl-team .sdm-browser-dots b{width:4px;height:4px;border-radius:50%;background:#8da4ad}
+#straden-layout-direction .sl-team .sdm-browser-bar>span:nth-child(2){display:flex;align-items:center;gap:5px;flex:1;min-width:0}
+#straden-layout-direction .sl-team .sdm-browser-bar [data-lucide]{width:11px;height:11px}
+#straden-layout-direction .sl-team .sdm-app-top{display:flex;align-items:center;gap:7px;padding:13px 12px 10px;font-size:12px;flex-wrap:wrap}
+#straden-layout-direction .sl-team .sdm-app-mark{position:relative;display:grid;place-items:center;background:var(--sdm-navy);color:var(--sdm-paper);width:24px;height:24px;border-radius:5px;font-weight:600;flex:none}
+#straden-layout-direction .sl-team .sdm-app-mark>span{position:absolute;width:4px;height:4px;top:4px;right:4px;background:var(--sdm-brand);border-radius:50%}
+#straden-layout-direction .sl-team .sdm-device-label{font-size:11px;color:var(--sdm-muted);margin-left:auto}
+#straden-layout-direction .sl-team .sdm-app-tabs{display:flex;gap:14px;padding:0 12px;color:#677f88;font-size:11px;border-bottom:1px solid var(--sdm-line)}
+#straden-layout-direction .sl-team .sdm-app-tabs>span{padding:7px 0}
+#straden-layout-direction .sl-team .sdm-selected{border-bottom:2px solid var(--sdm-ember);color:var(--sdm-ink)}
+#straden-layout-direction .sl-team .sdm-desktop-body{padding:12px}
+#straden-layout-direction .sl-team .sdm-brief{background:var(--sdm-soft);padding:10px;border-radius:6px;margin-bottom:12px}
+#straden-layout-direction .sl-team .sdm-brief>span{display:block;font-size:11px;letter-spacing:.04em;color:var(--sdm-muted);margin-bottom:5px}
+#straden-layout-direction .sl-team .sdm-brief>strong{display:block;font-size:12px;line-height:1.6;font-weight:500}
+#straden-layout-direction .sl-team .sdm-report{padding:11px 10px;border:1px solid var(--sdm-line);border-radius:5px}
+#straden-layout-direction .sl-team .sdm-report-heading{display:flex;align-items:flex-start;gap:7px}
+#straden-layout-direction .sl-team .sdm-report-heading>[data-lucide]{color:var(--sdm-ember);width:15px;height:15px}
+#straden-layout-direction .sl-team .sdm-report-heading strong{font-size:12px;line-height:1.5;font-weight:500;display:block}
+#straden-layout-direction .sl-team .sdm-report-heading>div>span{display:block;font-size:11px;color:var(--sdm-muted);margin-top:3px}
+#straden-layout-direction .sl-team .sdm-report-detail{font-size:11px;line-height:1.7;color:var(--sdm-muted);margin:11px 0}
+#straden-layout-direction .sl-team .sdm-evidence-state{display:flex;align-items:center;gap:5px;color:var(--sdm-navy);font-size:11px;line-height:1.5}
+#straden-layout-direction .sl-team .sdm-status-dot,#straden-layout-direction .sl-team .sdm-agent-dot,#straden-layout-direction .sl-team .sdm-connected-dot{width:5px;height:5px;border-radius:50%;background:var(--sdm-ember);flex:none}
+#straden-layout-direction .sl-team .sdm-review-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:space-between;padding-top:11px;margin-top:11px;border-top:1px solid var(--sdm-line);font-size:11px;color:var(--sdm-muted)}
+#straden-layout-direction .sl-team .sdm-review{background:var(--sdm-navy);color:var(--sdm-paper);border:0;border-radius:4px;padding:9px;font-size:11px;min-height:34px}
+#straden-layout-direction .sl-team .sdm-agent-line{display:flex;align-items:flex-start;gap:7px;font-size:11px;line-height:1.7;color:var(--sdm-muted);margin:12px 0}
+#straden-layout-direction .sl-team .sdm-agent-line>.sdm-agent-dot{margin-top:6px}
+#straden-layout-direction .sl-team .sdm-compose{border-top:1px solid var(--sdm-line);padding-top:10px;display:flex;align-items:center;justify-content:space-between;color:#69808a;font-size:11px}
+#straden-layout-direction .sl-team .sdm-compose [data-lucide]{width:12px;height:12px}
+#straden-layout-direction .sl-team .sdm-phone{width:100%;background:var(--sdm-paper);border:5px solid var(--sdm-night);border-radius:25px;padding:11px 11px 7px;min-width:0;box-shadow:0 12px 22px -18px #16314899}
+#straden-layout-direction .sl-team .sdm-phone-notch{width:42px;height:7px;background:var(--sdm-night);border-radius:8px;margin:0 auto 17px}
+#straden-layout-direction .sl-team .sdm-phone-top{display:flex;align-items:center;justify-content:space-between;gap:4px;font-size:11px;margin-bottom:20px}
+#straden-layout-direction .sl-team .sdm-phone-top strong{font-weight:500}
+#straden-layout-direction .sl-team .sdm-phone-top [data-lucide]{width:13px;height:13px;color:var(--sdm-muted)}
+#straden-layout-direction .sl-team .sdm-phone-label{display:block;font-size:11px;letter-spacing:.045em;color:var(--sdm-muted);margin-bottom:7px}
+#straden-layout-direction .sl-team .sdm-phone h3{font-size:17px;line-height:1.4}
+#straden-layout-direction .sl-team .sdm-phone p{font-size:11px;line-height:1.75;color:var(--sdm-muted);margin-top:10px}
+#straden-layout-direction .sl-team .sdm-mobile-attachments{display:flex;flex-direction:column;gap:7px;margin:17px 0}
+#straden-layout-direction .sl-team .sdm-mobile-attachments>span{display:flex;align-items:center;gap:6px;font-size:11px;padding:8px;background:var(--sdm-soft);border-radius:5px}
+#straden-layout-direction .sl-team .sdm-mobile-attachments [data-lucide]{width:13px;height:13px}
+#straden-layout-direction .sl-team .sdm-mobile-message{background:#e9eef1;border-radius:7px 7px 0 7px;padding:10px;font-size:11px;line-height:1.6;margin-bottom:11px}
+#straden-layout-direction .sl-team .sdm-update{display:flex;gap:5px;align-items:center;justify-content:center;width:100%;border:0;border-radius:5px;background:var(--sdm-ember);color:var(--sdm-paper);min-height:39px;padding:8px 5px;font-size:11px}
+#straden-layout-direction .sl-team .sdm-update [data-lucide]{width:12px;height:12px}
+#straden-layout-direction .sl-team .sdm-phone .sdm-phone-status{font-size:11px;text-align:center;min-height:32px}
+#straden-layout-direction .sl-team .sdm-home-bar{width:45px;height:3px;background:var(--sdm-night);border-radius:3px;margin:15px auto 0}
+#straden-layout-direction .sl-team .sdm-scene-caption{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:7px;font-size:11px;color:var(--sdm-navy);margin-top:8px}
+#straden-layout-direction .sl-team .sdm-owner-activity>.sdm-agent-dot{margin-top:7px}
+#straden-layout-direction .sl-team .sdm-phone h3{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-weight:600;letter-spacing:-.035em}
+#straden-layout-direction .sl-team .sdm-browser{min-width:0}
+#straden-layout-direction .sl-team .sdm-desktop-body{padding:14px}
+#straden-layout-direction .sl-team .sdm-review:disabled,#straden-layout-direction .sl-team .sdm-update:disabled{opacity:.65;cursor:default}
+#straden-layout-direction .sl-team .sdm-phone p{font-size:12px}
+#straden-layout-direction .sl-team .sdm-review,#straden-layout-direction .sl-team .sdm-update{min-height:44px}
+#straden-layout-direction .sl-team .sdm-review:focus-visible,#straden-layout-direction .sl-team .sdm-update:focus-visible{outline:3px solid var(--sl-ember);outline-offset:3px}
+#straden-layout-direction .sl-team .sdm-scene-caption{text-align:center;line-height:1.7}
+@container(min-width:1000px){#straden-layout-direction .sl-team{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+@container(max-width:999px){
+ #straden-layout-direction .sl-team{grid-template-columns:1fr}
+ #straden-layout-direction .sl-team>.sl-feature-copy{order:-1;width:min(100%,600px)}
+ #straden-layout-direction .sl-team .sdm-device-scene{width:100%;max-width:720px;justify-self:center}
+}
+@container(max-width:520px){
+ #straden-layout-direction .sl-team .sdm-device-scene{grid-template-columns:1fr;padding:17px;gap:25px}
+ #straden-layout-direction .sl-team .sdm-phone{width:min(100%,240px);justify-self:center;padding:13px 15px 8px}
+ #straden-layout-direction .sl-team .sdm-mobile-message,#straden-layout-direction .sl-team .sdm-phone p{font-size:14px}
+ #straden-layout-direction .sl-team .sdm-update{font-size:12px}
+ #straden-layout-direction .sl-team .sdm-owner-top{align-items:flex-start;flex-direction:column}
+ #straden-layout-direction .sl-access-availability{font-size:12px;gap:7px}
+}
+
 #straden-layout-direction .sl-nav nav a{font-size:11px;color:#b5c8d3;padding:8px 0;min-height:44px;display:inline-flex;align-items:center}
 #straden-layout-direction .sl-nav nav a[aria-current=page]{color:white;border-bottom:1px solid #e07a45}
 #straden-layout-direction .sl-legal{max-width:840px;margin:auto;padding:56px 6% 80px;min-height:70vh}
