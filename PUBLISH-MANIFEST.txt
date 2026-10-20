@@ -1,6 +1,6 @@
-Source: Straden working repository, commit 0fa74723
+Source: Straden working repository, commit 10773b56
 Target: pages
-Unchanged base Pages commit: b5a296adcfc4ef93440253e0ba436923d0d4ff00
+Unchanged base Pages commit: e473eb4601e3c2ee825f2ce6cc3a5b65e5e11a8b
 Overlay: hq-652.39-public-waitlist
 
 .nojekyll
@@ -53,6 +53,7 @@ delivery-waitlist/assets/favicon.svg
 delivery-waitlist/assets/fonts/inter-latin.woff2
 delivery-waitlist/assets/fonts/plus-jakarta-sans-latin.woff2
 delivery-waitlist/assets/layout.css
+delivery-waitlist/assets/measurement.js
 delivery-waitlist/assets/waitlist.css
 delivery-waitlist/assets/waitlist.js
 delivery-waitlist/contact.html

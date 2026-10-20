@@ -91,7 +91,7 @@
   <div class="sw-capture-wrap"><form class="sw-capture" data-email-capture><label class="sw-sr" for="sw-scroll-email">Business email</label><input id="sw-scroll-email" type="email" name="email" inputmode="email" autocomplete="email" placeholder="Your business email" maxlength="254" required><button type="submit" aria-label="Join the waitlist"><span class="sw-full-label">Join the waitlist</span><span class="sw-short-label" aria-hidden="true">Join</span> ↗</button></form></div>
   <button type="button" class="sw-dismiss" aria-label="Dismiss waitlist signup">×</button>
 </aside>
-</main><footer class="sl-footer"><span class="sl-brand">STRADEN<span class="sl-brand-dot" aria-hidden="true"></span></span><nav aria-label="Footer"><a href="/delivery-waitlist/privacy">Privacy</a><a href="/delivery-waitlist/terms">Waitlist terms</a><a href="/delivery-waitlist/contact">Contact</a></nav><small>© 2026 Straden</small></footer>
+</main><footer class="sl-footer"><span class="sl-brand">STRADEN<span class="sl-brand-dot" aria-hidden="true"></span></span><nav aria-label="Footer"><a href="/delivery-waitlist/privacy">Privacy</a><a href="/delivery-waitlist/terms">Waitlist terms</a><a href="/delivery-waitlist/contact">Contact</a></nav><small>© 2026 Straden</small><button type="button" class="sw-privacy-choices" data-measurement-choices>Privacy choices</button></footer>
   </div>
 </div>
 <style></style><script>
@@ -227,4 +227,8 @@
   reduced.addEventListener('change', motionPreference);
   document.addEventListener('visibilitychange',()=>{if(document.hidden && playing)stop();});
   render(); motionPreference();
-})();</script><script src="/delivery-waitlist/assets/waitlist.js"></script></body></html>
+})();</script><aside class="sw-measurement" role="region" aria-label="Optional measurement" hidden>
+  <p>May we measure visits and completed waitlist signups with Google Analytics and Meta Pixel to see which pages and ads work? Optional. <a href="/delivery-waitlist/privacy">Privacy</a></p>
+  <div><button type="button" data-measurement-accept>Accept</button><button type="button" data-measurement-decline>Decline</button></div>
+</aside>
+<script src="/delivery-waitlist/assets/measurement.js"></script><script src="/delivery-waitlist/assets/waitlist.js"></script></body></html>

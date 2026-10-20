@@ -12,6 +12,7 @@
   const consentText='Email me about this Straden product and early access. I can unsubscribe at any time.';
   let pending=false,saved=false,submissionId=null,lastPayload=null,opener=null,heroVisible=true,closeVisible=false,barDismissed=false;
   const attribution={};
+  attribution.landing_path=location.pathname;
   const params=new URLSearchParams(location.search);
   ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','campaign_id','adset_id','ad_id'].forEach(key=>{const v=params.get(key);if(v)attribution[key]=v.slice(0,300);});
   // No email or other form data is stored before the complete, consented request.
@@ -60,6 +61,7 @@
       const response=await fetch(document.body.dataset.waitlistEndpoint||'/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:controller.signal});
       const result=await response.json();
       if(!response.ok||result.saved!==true)throw new Error(result.error==='rate_limited'?'Please wait a little before trying again.':'We couldn’t save your details. Please try again.');
+      try{window.StradenWaitlistMeasurement?.confirmed(result);}catch{/* Measurement never blocks a saved signup. */}
       saved=true;form.hidden=true;success.hidden=false;document.getElementById('sl-signup-title').textContent='You’re on the Straden waitlist.';document.getElementById('sl-signup-intro').textContent=segment==='projects'?'For project-based specialty contractors and technical consultancies.':'For service-led specialty trades.';
       status.textContent='';dialog.querySelector('[data-close-waitlist]').focus();refreshBar();
     }catch(err){status.textContent=err.name==='AbortError'?'The request timed out. Please retry; we’ll avoid creating a duplicate.':err.message;}
