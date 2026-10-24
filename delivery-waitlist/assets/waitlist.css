@@ -5,6 +5,7 @@
 #straden-layout-direction .sw-capture button{flex:none;background:#b8532a;color:white;font:500 14px Inter,Arial,sans-serif;border:0;border-radius:7px;padding:12px 17px;min-height:48px}
 #straden-layout-direction .sl-hero-actions{flex-wrap:wrap;flex-direction:column;align-items:center;gap:16px}
 #straden-layout-direction .sl-hero-actions .sw-capture{flex:none;width:min(100%,450px)}
+#straden-layout-direction .sl-hero .sw-access-note{font-size:14px;line-height:1.5;margin:8px 0 0}
 #straden-layout-direction .sw-capture-wrap{width:min(100%,450px);min-width:0}
 #straden-layout-direction .sl-close .sw-capture-wrap{margin:24px auto 0}
 #straden-layout-direction .sl-close .sw-capture-wrap .sw-capture{margin:0}

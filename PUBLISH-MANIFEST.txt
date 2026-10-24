@@ -1,6 +1,6 @@
-Source: Straden working repository, commit 7b697f9d
+Source: Straden working repository, commit 232e64d9
 Target: pages
-Unchanged base Pages commit: 967b0b3a33e9a00695367e0f4f3aeb89ecf2d593
+Unchanged base Pages commit: 4741a87f1e41f160870098f55298e3b91f3ae388
 Overlay: hq-652.39-public-waitlist
 
 .nojekyll

@@ -66,6 +66,6 @@
       saved=true;form.hidden=true;success.hidden=false;document.getElementById('sl-signup-title').textContent='You’re on the Straden waitlist.';document.getElementById('sl-signup-intro').textContent=segment==='projects'?'For project-based specialty contractors and technical consultancies.':'For service-led specialty trades.';
       status.textContent='';dialog.querySelector('[data-close-waitlist]').focus();refreshBar();
     }catch(err){status.textContent=err.name==='AbortError'?'The request timed out. Please retry; we’ll avoid creating a duplicate.':err.message;}
-    finally{clearTimeout(timeout);pending=false;form.removeAttribute('aria-busy');submit.disabled=false;submit.innerHTML='Join the waitlist <span aria-hidden="true">↗</span>';}
+    finally{clearTimeout(timeout);pending=false;form.removeAttribute('aria-busy');submit.disabled=false;submit.innerHTML='Get early access <span aria-hidden="true">↗</span>';}
   });
 })();
