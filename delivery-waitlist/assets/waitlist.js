@@ -39,20 +39,21 @@
   }));
   const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.target.classList.contains('sl-hero'))heroVisible=entry.isIntersecting;else closeVisible=entry.isIntersecting;}refreshBar();});
   observer.observe(document.querySelector('.sl-hero'));observer.observe(document.querySelector('.sl-close'));
-  const fields=['name','email','phone','revenue','consent'];
+  const fields=['name','email','phone','revenue','revenue_currency','consent'];
   function error(field,message){const input=form.elements.namedItem(field);input.setAttribute('aria-invalid','true');input.setAttribute('aria-describedby','sw-'+field+'-error');document.getElementById('sw-'+field+'-error').textContent=message;return input;}
   fields.forEach(field=>{const input=form.elements.namedItem(field);input.addEventListener('input',()=>{input.removeAttribute('aria-invalid');document.getElementById('sw-'+field+'-error').textContent='';});});
   form.addEventListener('submit',async event=>{
     event.preventDefault();if(pending)return;
     fields.forEach(field=>{form.elements.namedItem(field).removeAttribute('aria-invalid');document.getElementById('sw-'+field+'-error').textContent='';});status.textContent='';
-    const data=new FormData(form);const name=String(data.get('name')||'').trim();const mail=String(data.get('email')||'').trim();const phone=String(data.get('phone')||'').trim();const revenue=String(data.get('revenue')||'');let first=null;
+    const data=new FormData(form);const name=String(data.get('name')||'').trim();const mail=String(data.get('email')||'').trim();const phone=String(data.get('phone')||'').trim();const revenue=String(data.get('revenue')||'');const revenueCurrency=String(data.get('revenue_currency')||'');let first=null;
     if(!name)first=error('name','Enter your name.');
     if(!mail||!email.validity.valid){const input=error('email','Enter a valid business email.');first||=input;}
     if(phone && (!/^[+()\d\s.#xext-]+$/i.test(phone)||phone.replace(/\D/g,'').length<7||phone.replace(/\D/g,'').length>18)){const input=error('phone','Enter a valid phone number or leave this optional field blank.');first||=input;}
     if(!revenue){const input=error('revenue','Select your annual revenue range.');first||=input;}
+    if(!['CAD','USD'].includes(revenueCurrency)){const input=error('revenue_currency','Select CAD or USD.');first||=input;}
     if(!data.has('consent')){const input=error('consent','Confirm you want product and early-access emails.');first||=input;}
     if(first){status.textContent='Please check the highlighted fields.';first.focus();return;}
-    const body={name,email:mail,phone,revenue,revenue_currency:'CAD',segment,consent:true,consent_text:consentText,attribution,website:String(data.get('website')||'')};
+    const body={name,email:mail,phone,revenue,revenue_currency:revenueCurrency,segment,consent:true,consent_text:consentText,attribution,website:String(data.get('website')||'')};
     // Reuse the ID for an unchanged retry, including after an uncertain response.
     const serial=JSON.stringify(body);if(serial!==lastPayload){submissionId=crypto.randomUUID();lastPayload=serial;}body.submission_id=submissionId;
     pending=true;form.setAttribute('aria-busy','true');submit.disabled=true;submit.textContent='Joining…';status.textContent='Saving your place…';
