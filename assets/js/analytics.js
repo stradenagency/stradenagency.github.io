@@ -12,7 +12,9 @@
   // New purpose includes confirmed bookings; earlier page-measurement consent is not reused.
   const KEY = "stradenConsentV2";
   const EVENTS = ["book_call_click", "mini_audit_click", "audit_view", "audit_start", "audit_step", "audit_gate_view", "audit_lead",
-                  "audit_result_view", "audit_lead_saved", "audit_book_call_click", "audit_restart", "contact_form_send"];
+                  "audit_result_view", "audit_lead_saved", "audit_book_call_click", "audit_restart", "contact_form_send",
+                  // HQ 652.47: early access on the home page and the Mini Audit waitlist opt-in (tracking/EVENT-MAP.md).
+                  "early_access_click", "early_access_signup", "audit_waitlist_join", "audit_early_access_click"];
   // Meta's standard events where one fits; the rest go as custom events under their own names.
   const META_STANDARD = { audit_lead: "Lead" };
   let started = false;

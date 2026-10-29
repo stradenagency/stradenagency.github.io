@@ -1,5 +1,4 @@
 const AUDIT_V2 = {
-  introCallUrl: "https://calendar.app.google/kBcDhYi7tCNre9oV9",
   storageKey: "stradenMiniAuditV2"
 };
 
@@ -119,6 +118,7 @@ const FRICTION_CAPABILITIES = {
 const state = {
   step: 0,
   firstName: "",
+  businessCategory: "",
   businessType: "",
   teamSize: null,
   messiestArea: null,
@@ -139,8 +139,12 @@ let focusHeading = false;
 // Contact details are asked for at the end, before the full result (Jamal, 9 Oct). The visitor sees a teaser,
 // then gives work email, company and phone to unlock the rest. The unlock saves a mini_audit lead through
 // assets/js/lead-client.js (lead-capture/LEAD-EVENT-CONTRACT.md); the result shows whether or not it saved.
-const gate = { unlocked: false, email: "", company: "", phone: "", consent: false, form: null, bookingKey: null, emailQueued: false };
-const CONSENT_TEXT = "Also send me occasional emails from Straden about putting AI to work. Unsubscribe anytime.";
+// HQ 652.47 (Jamal, 28 Oct): no call to book. The gate's one optional, unticked box adds the visitor to the
+// early-access waitlist (assets/js/waitlist-client.js), with the lane set from the type of business in question 1.
+// Nothing joins the waitlist without the tick; the lead itself saves either way.
+const gate = { unlocked: false, email: "", company: "", phone: "", consent: false, form: null, emailQueued: false, waitlist: "none", round: 0 };
+const WAITLIST = window.StradenWaitlist || null;
+const CONSENT_TEXT = WAITLIST ? WAITLIST.CONSENT.mini_audit : "";
 
 function escapeHtml(value) {
   return String(value || "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" })[char]);
@@ -193,7 +197,7 @@ function heading(title, sub) {
 
 function canProceed() {
   switch (state.step) {
-    case 0: return state.firstName.trim().length >= 2 && state.businessType.trim().length >= 3;
+    case 0: return state.firstName.trim().length >= 2 && (!WAITLIST || !!state.businessCategory) && state.businessType.trim().length >= 3;
     case 1: return !!state.teamSize;
     case 2: {
       const workflows = getWorkflows();
@@ -226,7 +230,7 @@ function back() {
 
 function renderQuestion() {
   if (state.step === 0) {
-    return `${heading("Tell us a little about you and your business", "We will use this context to make your result specific to the work you described.")}<label class="audit-v2-label" for="firstName">First name</label><input id="firstName" type="text" maxlength="80" autocomplete="given-name" required value="${escapeHtml(state.firstName)}" placeholder="Your first name" oninput="updateText('firstName', this.value)"><label class="audit-v2-label business-description-label" for="businessType">What kind of business do you run?</label><textarea id="businessType" class="audit-v2-field" maxlength="300" required placeholder="For example: We run a plumbing company serving homes and small businesses." oninput="updateText('businessType', this.value)">${escapeHtml(state.businessType)}</textarea>`;
+    return `${heading("Tell us a little about you and your business", "We will use this context to make your result specific to the work you described.")}<label class="audit-v2-label" for="firstName">First name</label><input id="firstName" type="text" maxlength="80" autocomplete="given-name" required value="${escapeHtml(state.firstName)}" placeholder="Your first name" oninput="updateText('firstName', this.value)">${WAITLIST ? `<label class="audit-v2-label business-description-label" for="businessCategory">Type of business</label><select id="businessCategory" class="audit-v2-field" required onchange="updateText('businessCategory', this.value)">${WAITLIST.options(state.businessCategory)}</select>` : ""}<label class="audit-v2-label business-description-label" for="businessType">What kind of business do you run?</label><textarea id="businessType" class="audit-v2-field" maxlength="300" required placeholder="For example: We run a plumbing company serving homes and small businesses." oninput="updateText('businessType', this.value)">${escapeHtml(state.businessType)}</textarea>`;
   }
   if (state.step === 1) {
     return `${heading("How many people are involved in the day-to-day operation?", "Include yourself and anyone who regularly helps move client work forward.")}<div class="grid-2">${[["1", "1"], ["2-5", "2-5"], ["6-10", "6-10"], ["11-25", "11-25"], ["26+", "26+"]].map(v => option("teamSize", v[0], v[1], 0)).join("")}</div>`;
@@ -345,6 +349,7 @@ function computeResult() {
     categoryPoints: category.points,
     workflows,
     firstName: state.firstName.trim(),
+    businessCategory: state.businessCategory,
     businessType: state.businessType.trim(),
     teamSize: state.teamSize.value,
     messiestArea: primaryArea,
@@ -494,23 +499,32 @@ function renderResults() {
       <ol class="wins-list">${report.wins.map(w => `<li>${e(w)}</li>`).join("")}</ol>
     </section>
 
-    <section class="res-next">
-      <div><h3>Want this agent built and running?</h3><p>Book a call. We'll look at your answers together and tell you plainly whether the Operational Leverage Audit is worth doing.</p></div>
-      <div class="res-next-actions"><a class="btn btn-cta result-cta" id="resultBookCall" href="${e(bookingUrl())}" onclick="track('audit_book_call_click', { tier: computeResult().lead.tier })">Book a call</a><button type="button" class="results-secondary-link" onclick="restartAudit()">Retake the Mini Audit</button></div>
-    </section>
+    <section class="res-waitlist" id="resWaitlist" aria-label="Early access">${waitlistEnding()}</section>
   </div>`;
 }
 
-// Same-tab handoff keeps the saved opaque lead key/source on this origin, out of tag/page URLs.
-function bookingUrl() {
-  try {
-    if (typeof gate.bookingKey === "string" && /^bk_[a-z2-7]{32}$/.test(gate.bookingKey)) {
-      sessionStorage.setItem("stradenBookingContextV1", JSON.stringify({
-        bookingKey: gate.bookingKey, source: window.StradenLeads ? window.StradenLeads.attribution() : {}
-      }));
-    } else sessionStorage.removeItem("stradenBookingContextV1");
-  } catch (error) { /* Booking remains available without inventing correlation when storage fails. */ }
-  return "/booking";
+// HQ 652.47: the end of the audit explains the funnel. DRAFT wording ("limited number of clients", the app line)
+// waits on Jamal's yes at preview. The joined state appears only after the waitlist confirms the save.
+function waitlistEnding() {
+  const why = "Straden is taking on a limited number of clients right now while we develop our product and its client app.";
+  const leave = 'You can unsubscribe at any time: reply \u201cunsubscribe\u201d to any email from us, or write to <a href="mailto:hello@straden.ca">hello@straden.ca</a>.';
+  const retake = '<button type="button" class="results-secondary-link" onclick="restartAudit()">Retake the Mini Audit</button>';
+  const join = '<a class="btn btn-cta result-cta" href="/#early-access" onclick="track(\'audit_early_access_click\')">Get early access</a>';
+  if (gate.waitlist === "saved") {
+    return `<h3>You're on the early-access waitlist.</h3><p>${why} By completing this audit, you've joined the waitlist to gain early access. We'll email you as access opens.</p><p>${leave}</p><div class="res-next-actions">${retake}</div>`;
+  }
+  if (gate.waitlist === "pending") {
+    return `<h3>Adding you to the early-access waitlist…</h3><p>${why}</p><div class="res-next-actions">${retake}</div>`;
+  }
+  if (gate.waitlist === "failed") {
+    return `<h3>We couldn't add you to the waitlist just now.</h3><p>${why} Your result is safe on this page. You can join the early-access waitlist from the home page.</p><div class="res-next-actions">${join}${retake}</div>`;
+  }
+  return `<h3>Want early access?</h3><p>${why} You didn't ask to join the waitlist, so we won't email you about it. You can join any time.</p><div class="res-next-actions">${join}${retake}</div>`;
+}
+
+function showWaitlistEnding() {
+  const box = document.getElementById("resWaitlist");
+  if (box) box.innerHTML = waitlistEnding();
 }
 
 // The assessment "writes in" after a short pause. It is the writeAssessment() template (Jamal, 9 Oct: templates
@@ -528,9 +542,8 @@ function revealAssessment() {
 function restartAudit() {
   track("audit_restart");
   lastScreen = "";
-  Object.assign(gate, { unlocked: false, form: null, bookingKey: null, emailQueued: false });
-  try { sessionStorage.removeItem("stradenBookingContextV1"); } catch (error) { /* unavailable */ }
-  Object.assign(state, { step: 0, firstName: "", businessType: "", teamSize: null, messiestArea: null, statusChasing: null, stuckHandoffs: null, informalCoordination: null, ownerDependence: null, hoursLost: null, hourlyCost: "", consequence: null, urgency: null, workflows: "" });
+  Object.assign(gate, { unlocked: false, form: null, emailQueued: false, waitlist: "none", round: gate.round + 1 });
+  Object.assign(state, { step: 0, firstName: "", businessCategory: "", businessType: "", teamSize: null, messiestArea: null, statusChasing: null, stuckHandoffs: null, informalCoordination: null, ownerDependence: null, hoursLost: null, hourlyCost: "", consequence: null, urgency: null, workflows: "" });
   render();
 }
 
@@ -574,11 +587,12 @@ function renderGate() {
         <div><label class="audit-v2-label" for="gateCompany">Company</label><input id="gateCompany" type="text" autocomplete="organization" required value="${escapeHtml(gate.company)}" placeholder="Company name" oninput="updateGate('company', this.value)"></div>
         <div><label class="audit-v2-label" for="gatePhone">Phone</label><input id="gatePhone" type="text" inputmode="tel" maxlength="32" autocomplete="tel" required value="${escapeHtml(gate.phone)}" placeholder="Best number to reach you" oninput="updateGate('phone', this.value)"></div>
       </div>
-      <label class="gate-consent"><input type="checkbox" ${gate.consent ? "checked" : ""} onchange="updateGate('consent', this.checked)"> <span>${CONSENT_TEXT}</span></label>
+      ${WAITLIST ? `<p class="gate-waitlist-note"><strong>Early access.</strong> Straden is taking on a limited number of clients right now while we develop our product and its client app. Tick the box to join the early-access waitlist with this audit. It's optional: your full result shows either way.</p>
+      <label class="gate-consent ea-consent"><input type="checkbox" id="gateConsent" ${gate.consent ? "checked" : ""} onchange="updateGate('consent', this.checked)"> <span>${CONSENT_TEXT}</span></label>` : ""}
       <div class="form-trap" aria-hidden="true"><label for="gateWebsite">Leave this field empty</label><input id="gateWebsite" type="text" tabindex="-1" autocomplete="off"></div>
       <p class="field-error" id="gateError" role="alert"></p>
       <div class="nav-row"><button type="button" class="btn btn-text" onclick="back()">Back</button><button type="button" class="btn btn-primary" onclick="submitGate(event)">Show my full result</button></div>
-      <p class="gate-note">We'll show your full result here and email you a copy. Your answers stay private. See our <a href="/privacy">Privacy Policy</a>.</p>
+      <p class="gate-note">We'll show your full result here and email you a copy. Your answers stay private. See our <a href="/privacy">Privacy Policy</a>${WAITLIST ? ` and the <a href="/delivery-waitlist/privacy" target="_blank" rel="noopener">waitlist privacy notice</a>. The waitlist is run by Straden, operated by Jamal Muckett-Sobers, 601-9 Valhalla Inn Road, Toronto, ON M9B 0B2, Canada · <a href="mailto:hello@straden.ca">hello@straden.ca</a>. To unsubscribe, reply \u201cunsubscribe\u201d to any email from us or write to hello@straden.ca` : ""}.</p>
     </form>
   </div>`;
 }
@@ -602,14 +616,30 @@ function submitGate(event) {
   gate.unlocked = true;
   const result = computeResult();
   track("audit_lead", { tier: result.lead.tier, band: result.band, team: result.teamSize, consent: !!gate.consent });
+  gate.waitlist = gate.consent && WAITLIST ? "pending" : "none";
   window.dispatchEvent(new CustomEvent("straden:mini-audit-lead", { detail: { contact: { firstName: result.firstName, email: gate.email, company: gate.company, phone: gate.phone, followUpConsent: gate.consent }, result } }));
   saveLead(result);
+  if (gate.waitlist === "pending") joinWaitlist(result);
   focusHeading = true;
   render();
 }
 
-// Saves the lead once per completed audit. The visitor sees the result straight away; the booking key and the
-// "copy is on its way" line appear when the service confirms. If the save fails, the result stays on screen
+// The opt-in joins the same waitlist as the lane pages. Only called when the box is ticked; the server refuses
+// a sign-up without consent too. "Other" sends the visitor's own description from question 1 as its free text.
+async function joinWaitlist(result) {
+  const round = gate.round;
+  const trap = document.getElementById("gateWebsite");
+  const fields = { name: result.firstName, email: gate.email, phone: gate.phone, source: "mini_audit", business_type: result.businessCategory, consent: gate.consent === true, website: trap ? trap.value : "" };
+  if (result.businessCategory === "other") fields.business_type_other = result.businessType.slice(0, 120);
+  const outcome = await WAITLIST.submit(fields);
+  if (gate.round !== round) return;  // the visitor restarted meanwhile
+  gate.waitlist = outcome.saved ? "saved" : "failed";
+  track("audit_waitlist_join", { saved: outcome.saved, business_type: result.businessCategory });
+  showWaitlistEnding();
+}
+
+// Saves the lead once per completed audit. The visitor sees the result straight away; the
+// "copy is on its way" line appears when the service confirms. If the save fails, the result stays on screen
 // (LEAD-EVENT-CONTRACT.md §4).
 async function saveLead(result) {
   if (!window.StradenLeads || !gate.form) return;
@@ -619,7 +649,7 @@ async function saveLead(result) {
     source: "mini_audit",
     contact: { name: result.firstName, email: gate.email, company: gate.company, phone: gate.phone, role: "unknown" },
     mini_audit: {
-      answers: { answers: result.answers, businessType: result.businessType, teamSize: result.teamSize, messiestArea: result.messiestArea, workflows: result.workflows, hourlyCost: result.timeCost.hourlyCost, followUpConsent: !!gate.consent, consentText: gate.consent ? CONSENT_TEXT : "" },
+      answers: { answers: result.answers, businessCategory: result.businessCategory, businessType: result.businessType, teamSize: result.teamSize, messiestArea: result.messiestArea, workflows: result.workflows, hourlyCost: result.timeCost.hourlyCost, followUpConsent: !!gate.consent, consentText: gate.consent ? CONSENT_TEXT : "" },
       result: Object.assign({}, result, { report: buildReport(result) })
     },
     website: trap ? trap.value : ""
@@ -628,10 +658,7 @@ async function saveLead(result) {
   if (!gate.form || gate.form.submissionId !== bookingSubmission) return;
   track("audit_lead_saved", { saved: outcome.saved, tier: result.lead.tier });
   if (!outcome.saved) return;
-  gate.bookingKey = outcome.bookingKey;
   gate.emailQueued = outcome.resultEmail === "queued";
-  const link = document.getElementById("resultBookCall");
-  if (link) link.href = bookingUrl();
   const copy = document.getElementById("resCopy");
   if (copy && gate.emailQueued) copy.hidden = false;
 }

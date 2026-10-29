@@ -1,12 +1,10 @@
-Source: Straden working repository, commit 232e64d9
+Source: Straden working repository, commit 18e0b47e
 Target: pages
-Unchanged base Pages commit: 4741a87f1e41f160870098f55298e3b91f3ae388
 Overlay: hq-652.39-public-waitlist
 
 .nojekyll
 404.html
 CNAME
-PUBLISH-MANIFEST.txt
 about.html
 assets/css/nav.css
 assets/css/responsive.css
@@ -25,8 +23,10 @@ assets/js/audit-v2.js
 assets/js/booking-config.js
 assets/js/cal-booking.js
 assets/js/contact.js
+assets/js/early-access.js
 assets/js/lead-client.js
 assets/js/nav.js
+assets/js/waitlist-client.js
 assets/tools/runner/calendly.svg
 assets/tools/runner/docusign.svg
 assets/tools/runner/dropbox.svg
